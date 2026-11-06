@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Can go→。アイデアを形にし、新しい可能性を生み出すプロジェクト活動。">
+<title>Can go→ | Official Website</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --ink:#171b19;
+  --green:#356b55;
+  --muted:#777f7a;
+  --line:#e8ebe8;
+  --bg:#f6f8f6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,"Noto Sans JP",sans-serif;color:var(--ink);line-height:1.8}
+a{color:inherit;text-decoration:none}
+header{height:76px;padding:0 8%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10}
+.logo{font-size:25px;font-weight:800;letter-spacing:-1.5px}
+.logo span{color:var(--green)}
+nav{display:flex;gap:32px;font-size:11px;font-weight:700;letter-spacing:1.5px}
+nav a:hover{color:var(--green)}
+.menu{display:none;border:0;background:none;font-size:24px}
+.hero{min-height:620px;background:var(--bg);display:flex;align-items:center;padding:100px 12%;position:relative;overflow:hidden}
+.hero:after{content:"→";position:absolute;right:4%;bottom:-170px;font-size:570px;font-weight:800;color:#356b5509;line-height:1}
+.hero-inner{position:relative;z-index:1}
+.eyebrow{font-size:11px;letter-spacing:3px;font-weight:700;color:var(--green);margin-bottom:28px}
+h1{font-size:clamp(48px,7vw,88px);line-height:1.1;letter-spacing:-4px;font-weight:800}
+h1 span{color:var(--green)}
+.hero p{color:var(--muted);font-size:15px;margin:28px 0 36px}
+.btn{display:inline-flex;gap:35px;align-items:center;background:var(--ink);color:white;padding:15px 24px;font-size:11px;font-weight:700;letter-spacing:1px;transition:.25s}
+.btn:hover{background:var(--green);gap:45px}
+section{padding:105px 12%}
+.label{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--green);margin-bottom:10px}
+h2{font-size:35px;letter-spacing:-1px;margin-bottom:42px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.about-grid h3{font-size:24px;line-height:1.7}
+.about-grid p{font-size:14px;color:var(--muted)}
+.projects{background:var(--bg)}
+.project-card{display:grid;grid-template-columns:1fr 1fr;background:white;border:1px solid var(--line);transition:.3s}
+.project-card:hover{transform:translateY(-5px);box-shadow:0 15px 40px #0000000c}
+.project-art{min-height:290px;background:#18251f;color:white;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px}
+.project-art .symbol{font-size:58px;color:#8ac5a5;font-weight:700}
+.project-art h3{font-size:24px;margin-top:10px}
+.project-info{padding:45px;display:flex;flex-direction:column;justify-content:center}
+.number{font-size:11px;color:var(--green);font-weight:700;letter-spacing:2px}
+.project-info h3{font-size:27px;margin:12px 0}
+.project-info p{font-size:13px;color:var(--muted);margin-bottom:25px}
+.link{font-size:11px;font-weight:700;letter-spacing:1px;border-bottom:1px solid;width:max-content;padding-bottom:5px}
+.news-list{border-top:1px solid var(--line)}
+.news{display:flex;gap:35px;padding:22px 5px;border-bottom:1px solid var(--line);font-size:13px}
+.news time{color:var(--muted)}
+.contact{background:#18201c;color:white;text-align:center}
+.contact .label{color:#8ac5a5}
+.contact h2{font-size:clamp(35px,5vw,55px);margin-bottom:15px}
+.contact p{font-size:13px;color:#b4bcb7;margin-bottom:30px}
+.contact .btn{background:white;color:var(--ink)}
+footer{padding:32px 8%;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted)}
+footer .logo{color:var(--ink)}
+.reveal{opacity:0;transform:translateY(18px);transition:.7s}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:700px){
+ header{height:66px;padding:0 6%}
+ .menu{display:block}
+ nav{display:none;position:absolute;top:66px;left:0;width:100%;background:white;padding:25px;flex-direction:column;gap:20px;border-bottom:1px solid var(--line)}
+ nav.open{display:flex}
+ .hero{min-height:540px;padding:80px 7%}
+ h1{letter-spacing:-2px}
+ section{padding:75px 7%}
+ h2{font-size:29px}
+ .about-grid,.project-card{grid-template-columns:1fr;gap:25px}
+ .project-art{min-height:220px}
+ .project-info{padding:30px}
+ .news{gap:14px;flex-wrap:wrap}
+ footer{padding:28px 7%;flex-direction:column;gap:12px}
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#">Can go<span>→</span></a>
+  <button class="menu" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="メニュー">☰</button>
+  <nav>
+    <a href="#about">ABOUT</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#news">NEWS</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">IDEAS INTO REALITY.</div>
+      <h1>Possibilities<br>start <span>here.</span></h1>
+      <p>アイデアを、可能性に。<br>考えるだけで終わらせず、新しい価値を形にする。</p>
+      <a class="btn" href="#projects">OUR PROJECTS <span>→</span></a>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="label">01 / ABOUT</div>
+    <h2>Can go→について</h2>
+    <div class="about-grid reveal">
+      <h3>アイデアを考えるだけで終わらせない。<br>実際に形にし、社会へ届ける。</h3>
+      <p>
+        Can go→は、学校での活動から生まれたプロジェクトチームです。
+        身近な課題や社会の問題に目を向け、企画・開発を通じて
+        新しい解決策を生み出すことを目指しています。
+        小さなアイデアから、実際に使われるサービスへ。
+        私たちは可能性を形にしていきます。
+      </p>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="label">02 / PROJECTS</div>
+    <h2>プロジェクト</h2>
+    <a class="project-card reveal" href="project/positivefinger.html">
+      <div class="project-art">
+        <div>
+          <div class="symbol">＋</div>
+          <h3>ポジティブフィンガー™</h3>
+          <small>POSITIVE COMMUNICATION PROJECT</small>
+        </div>
+      </div>
+      <div class="project-info">
+        <div class="number">PROJECT 001</div>
+        <h3>ポジティブフィンガー™</h3>
+        <p>
+          ポジティブな言葉を広げ、より良いコミュニケーションの
+          実現を目指すキーボード連携型プロジェクト。
+        </p>
+        <span class="link">VIEW PROJECT　→</span>
+      </div>
+    </a>
+  </section>
+
+  <section id="news">
+    <div class="label">03 / NEWS</div>
+    <h2>お知らせ</h2>
+    <div class="news-list">
+      <div class="news">
+        <time>2026.11</time>
+        <span>Can go→ 公式サイト制作</span>
+      </div>
+      <div class="news">
+        <time>2026.11</time>
+        <span>PROJECT 001 ポジティブフィンガー™</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="label">04 / CONTACT</div>
+    <h2>Let's move forward.</h2>
+    <p>Can go→の活動やプロジェクトについてのお問い合わせ。</p>
+    <a class="btn" href="mailto:">CONTACT US　→</a>
+  </section>
+</main>
+
+<footer>
+  <a class="logo" href="#">Can go<span>→</span></a>
+  <span>© 2026 Can go→</span>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.querySelectorAll('nav a').forEach(a=>{
+  a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open'));
+});
+</script>
+</body>
+</html>
