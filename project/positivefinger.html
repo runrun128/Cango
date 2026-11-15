@@ -4,338 +4,625 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="ポジティブフィンガー™。ポジティブな言葉が広がる新しいコミュニケーションを目指すプロジェクト。">
-<title>ポジティブフィンガー™ | Can go→</title>
+<meta name="theme-color" content="#CB6A9C">
+<meta name="description" content="ことばを、こほうびに。やさしさが伝播する新しいSNSの世界をポジティブフィンガーが創造する。">
+
+<title>ポジティブフィンガー | Can go→</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap');
-
 :root {
-  --ink:#17201b;
-  --green:#39745b;
-  --light:#f2f7f3;
-  --muted:#737d76;
-  --line:#e4eae5;
+  --pink: #CB6A9C;
+  --pink-dark: #A94779;
+  --pink-light: #F9EAF1;
+  --yellow: #FFD32D;
+  --ink: #191719;
+  --white: #FFFFFF;
+  --gray: #777077;
+  --bg: #FAF8F9;
+  --line: #EADFE5;
 }
 
 * {
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-  scroll-behavior:smooth;
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
 }
 
 body {
-  font-family:Inter,"Noto Sans JP",sans-serif;
-  color:var(--ink);
-  line-height:1.8;
+  font-family: Inter, "Noto Sans JP", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.8;
+  overflow-x: hidden;
 }
 
 a {
-  text-decoration:none;
-  color:inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
+/* HEADER */
+
 header {
-  height:75px;
-  padding:0 8%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:1px solid var(--line);
+  height: 76px;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-bottom: 2px solid var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo {
-  font-size:24px;
-  font-weight:800;
-  letter-spacing:-1px;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -1px;
 }
 
 .logo span {
-  color:var(--green);
+  color: #D1A900;
 }
 
 .back {
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:1px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: .2s;
 }
 
 .back:hover {
-  color:var(--green);
+  color: var(--pink);
 }
 
+/* HERO */
+
 .hero {
-  background:var(--light);
-  padding:110px 12%;
-  min-height:530px;
-  display:flex;
-  align-items:center;
+  min-height: 590px;
+  background: var(--pink);
+  padding: 90px 12%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 2px solid var(--ink);
+}
+
+.hero::after {
+  content: "+";
+  position: absolute;
+  right: -40px;
+  bottom: -190px;
+  font-size: 550px;
+  line-height: 1;
+  font-weight: 900;
+  color: #FFFFFF16;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
 }
 
 .label {
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:3px;
-  color:var(--green);
-  margin-bottom:18px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+}
+
+.hero .label {
+  color: white;
 }
 
 h1 {
-  font-size:clamp(42px,7vw,76px);
-  line-height:1.3;
-  letter-spacing:-2px;
+  font-size: clamp(48px, 7vw, 86px);
+  line-height: 1.3;
+  letter-spacing: -3px;
+  font-weight: 900;
+  color: white;
 }
 
-.hero p {
-  font-size:15px;
-  color:var(--muted);
-  margin-top:25px;
+.hero-keyword {
+  color: var(--yellow);
+  display: inline-block;
+  text-shadow: 4px 4px 0 var(--ink);
 }
+
+.hero-description {
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  margin-top: 25px;
+  line-height: 2;
+}
+
+.hero-sub {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #FFFFFFC9;
+  margin-top: 35px;
+}
+
+/* HERO ICON */
+
+.hero-icon-wrap {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  margin-left: 40px;
+}
+
+.hero-icon {
+  width: clamp(180px, 22vw, 270px);
+  height: clamp(180px, 22vw, 270px);
+  object-fit: cover;
+  border: 4px solid var(--ink);
+  border-radius: 48px;
+  box-shadow: 13px 13px 0 var(--ink);
+  transform: rotate(4deg);
+  transition: .3s;
+}
+
+.hero-icon:hover {
+  transform: rotate(0deg) scale(1.04);
+}
+
+.icon-decoration {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  background: var(--yellow);
+  width: 65px;
+  height: 65px;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  font-weight: 900;
+}
+
+/* COMMON */
 
 section {
-  padding:100px 12%;
+  padding: 105px 12%;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--pink-dark);
+  margin-bottom: 12px;
 }
 
 h2 {
-  font-size:34px;
-  margin-bottom:35px;
-  letter-spacing:-1px;
+  font-size: 37px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  margin-bottom: 40px;
 }
 
 .lead {
-  font-size:20px;
-  font-weight:600;
-  line-height:1.9;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.9;
 }
 
 .body {
-  font-size:14px;
-  color:var(--muted);
-  margin-top:22px;
-  max-width:750px;
+  font-size: 14px;
+  color: var(--gray);
+  margin-top: 22px;
+  max-width: 760px;
+  line-height: 2.2;
 }
+
+/* OVERVIEW */
+
+.overview {
+  background: white;
+}
+
+.overview-highlight {
+  display: inline;
+  background: var(--yellow);
+  padding: 2px 6px;
+}
+
+/* PROBLEM */
 
 .problem {
-  background:#18251f;
-  color:white;
+  background: var(--ink);
+  color: white;
 }
 
-.problem .label {
-  color:#8ac5a5;
-}
-
-.problem h2 {
-  color:white;
+.problem .section-label {
+  color: #F09BC3;
 }
 
 .problem .body {
-  color:#c0cbc4;
+  color: #D0C8CE;
 }
 
-.grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-top:40px;
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 45px;
 }
 
-.item {
-  padding:28px;
-  background:#24352b;
-  border:1px solid #35483b;
+.problem-card {
+  padding: 28px;
+  background: #30262D;
+  border: 1px solid #51404B;
+  transition: .25s;
 }
 
-.item b {
-  font-size:14px;
-  display:block;
-  margin-bottom:12px;
+.problem-card:hover {
+  background: #44313E;
+  transform: translateY(-5px);
 }
 
-.item p {
-  font-size:12px;
-  color:#bdc9c0;
+.problem-card .number {
+  color: #F09BC3;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
 }
+
+.problem-card h3 {
+  font-size: 17px;
+  margin: 13px 0;
+}
+
+.problem-card p {
+  font-size: 12px;
+  color: #D0C8CE;
+}
+
+/* FEATURES */
 
 .features {
-  background:var(--light);
+  background: var(--pink-light);
 }
 
 .feature-list {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 .feature {
-  padding:30px;
-  background:white;
-  border:1px solid var(--line);
+  padding: 32px;
+  background: white;
+  border: 2px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  transition: .25s;
+}
+
+.feature:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--ink);
 }
 
 .feature .num {
-  color:var(--green);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:2px;
+  display: inline-block;
+  background: var(--pink);
+  color: white;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 
 .feature h3 {
-  font-size:18px;
-  margin:10px 0;
+  font-size: 20px;
+  font-weight: 900;
+  margin: 17px 0 10px;
 }
 
 .feature p {
-  font-size:13px;
-  color:var(--muted);
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 2;
+}
+
+/* SYSTEM */
+
+.system {
+  background: white;
 }
 
 .flow {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:15px;
-  margin-top:40px;
-  flex-wrap:wrap;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 45px;
 }
 
-.flow span {
-  padding:15px 20px;
-  background:var(--light);
-  font-size:13px;
-  font-weight:600;
+.flow-item {
+  flex: 1;
+  min-width: 0;
+  padding: 22px 12px;
+  background: var(--pink-light);
+  border: 1px solid var(--line);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.flow i {
-  font-style:normal;
-  color:var(--green);
-  font-weight:700;
+.flow-item strong {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.flow-item small {
+  font-size: 10px;
+  color: var(--gray);
+  margin-top: 7px;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--pink);
+}
+
+/* DEVELOPMENT */
+
+.development {
+  background: var(--yellow);
+}
+
+.development .section-label {
+  color: #715900;
+}
+
+.development .body {
+  color: #51451C;
 }
 
 .platforms {
-  display:flex;
-  gap:15px;
-  flex-wrap:wrap;
-  margin-top:30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
 }
 
 .platforms span {
-  border:1px solid var(--line);
-  padding:12px 22px;
-  font-size:13px;
-  font-weight:600;
+  padding: 10px 22px;
+  background: white;
+  border: 2px solid var(--ink);
+  font-size: 12px;
+  font-weight: 900;
 }
 
-.team {
-  background:var(--light);
-}
-
-.team p {
-  font-size:14px;
-  color:var(--muted);
-  max-width:700px;
-}
+/* CTA */
 
 .cta {
-  background:#18251f;
-  color:white;
-  text-align:center;
+  background: var(--pink);
+  color: white;
+  text-align: center;
+  padding: 110px 10%;
 }
 
-.cta .label {
-  color:#8ac5a5;
+.cta .section-label {
+  color: white;
 }
 
 .cta h2 {
-  font-size:clamp(30px,5vw,48px);
+  font-size: clamp(34px, 5vw, 57px);
+  line-height: 1.5;
+  margin-bottom: 15px;
 }
 
 .cta p {
-  color:#bac5bd;
-  font-size:13px;
-  margin-bottom:30px;
+  color: #FFFFFFDB;
+  font-size: 13px;
+  margin-bottom: 35px;
 }
 
 .btn {
-  display:inline-block;
-  padding:14px 25px;
-  background:white;
-  color:var(--ink);
-  font-size:12px;
-  font-weight:700;
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+  padding: 15px 25px;
+  background: var(--yellow);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  font-size: 12px;
+  font-weight: 900;
+  transition: .2s;
 }
 
 .btn:hover {
-  background:#8ac5a5;
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--ink);
 }
 
+/* FOOTER */
+
 footer {
-  padding:30px 8%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  font-size:11px;
-  color:var(--muted);
+  padding: 30px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-top: 2px solid var(--ink);
+  gap: 20px;
 }
 
 .social-links {
-  display:flex;
-  align-items:center;
-  gap:20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .social-links a {
-  font-size:12px;
-  font-weight:700;
-  color:var(--green);
-  transition:opacity .2s;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--pink-dark);
+  transition: .2s;
 }
 
 .social-links a:hover {
-  opacity:.65;
+  opacity: .65;
 }
 
-@media(max-width:700px) {
-  header {
-    padding:0 6%;
-    height:65px;
-  }
+footer small {
+  color: var(--gray);
+  font-size: 11px;
+}
 
+/* REVEAL */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .7s, transform .7s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 800px) {
   .hero {
-    padding:80px 7%;
-    min-height:450px;
+    padding: 80px 7%;
   }
 
   section {
-    padding:75px 7%;
+    padding: 80px 7%;
+  }
+
+  .hero-icon {
+    width: 190px;
+    height: 190px;
+  }
+
+  .problem-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 600px) {
+  header {
+    padding: 0 6%;
+    height: 66px;
+  }
+
+  .back {
+    font-size: 9px;
+  }
+
+  .hero {
+    min-height: 650px;
+    padding: 65px 7%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 55px;
+  }
+
+  h1 {
+    font-size: clamp(43px, 11vw, 62px);
+    letter-spacing: -2px;
+  }
+
+  .hero-icon-wrap {
+    margin: 0 auto 15px;
+  }
+
+  .hero-icon {
+    width: 155px;
+    height: 155px;
+    border-radius: 30px;
+  }
+
+  .icon-decoration {
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
+  }
+
+  section {
+    padding: 75px 7%;
   }
 
   h2 {
-    font-size:28px;
+    font-size: 29px;
+    margin-bottom: 30px;
   }
 
-  .grid,
+  .lead {
+    font-size: 18px;
+  }
+
+  .problem-grid,
   .feature-list {
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
   }
 
   .flow {
-    gap:8px;
+    flex-direction: column;
+    gap: 8px;
   }
 
-  .flow span {
-    padding:10px 12px;
-    font-size:11px;
+  .flow-arrow {
+    justify-content: center;
+    transform: rotate(90deg);
+  }
+
+  .flow-item {
+    padding: 15px;
+  }
+
+  .cta {
+    padding: 80px 7%;
   }
 
   footer {
-    padding:25px 7%;
-    gap:15px;
-    flex-direction:column;
-    align-items:flex-start;
+    padding: 25px 7%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }
 </style>
@@ -344,35 +631,86 @@ footer {
 <body>
 
 <header>
-  <a href="../index.html" class="logo">Can go<span>→</span></a>
-  <a href="../index.html#projects" class="back">← BACK TO CAN GO→</a>
+  <a href="../index.html" class="logo">
+    Can go<span>→</span>
+  </a>
+
+  <a href="../index.html#projects" class="back">
+    ← BACK TO CAN GO→
+  </a>
 </header>
 
 <main>
 
+<!-- HERO -->
+
 <div class="hero">
-  <div>
+
+  <div class="hero-content">
+
     <div class="label">PROJECT 001 / CAN GO→</div>
-    <h1>ポジティブフィンガー™</h1>
-    <p>言葉から、コミュニケーションを変えていく。</p>
+
+    <h1>
+      ことばを、<br>
+      <span class="hero-keyword">こほうび</span>に。
+    </h1>
+
+    <p class="hero-description">
+      やさしさが伝播する新しいSNSの世界を<br>
+      ポジティブフィンガーが創造する。
+    </p>
+
+    <div class="hero-sub">
+      POSITIVE COMMUNICATION PROJECT
+    </div>
+
   </div>
+
+  <div class="hero-icon-wrap">
+
+    <img
+      src="../images/positivefinger-icon.png"
+      alt="ポジティブフィンガー アプリアイコン"
+      class="hero-icon"
+    >
+
+    <div class="icon-decoration">+</div>
+
+  </div>
+
 </div>
 
-<section>
-  <div class="label">01 / OVERVIEW</div>
+<!-- OVERVIEW -->
+
+<section class="overview reveal">
+
+  <div class="section-label">01 / OVERVIEW</div>
+
   <h2>プロジェクト概要</h2>
-  <p class="lead">誹謗中傷が広がるネットの世界を、ポジティブな言葉が広がる世界へ。</p>
+
+  <p class="lead">
+    <span class="overview-highlight">
+      ことばを、こほうびに。
+    </span>
+  </p>
+
   <p class="body">
-    ポジティブフィンガー™は、スマートフォンでの文字入力を通じて、
+    ポジティブフィンガーは、スマートフォンでの文字入力を通じて、
     ポジティブな言葉や表現を広げることを目指すプロジェクトです。
     日常的なコミュニケーションの中に前向きな言葉を増やし、
-    より良いネットコミュニケーションの実現を目指します。
+    やさしさが伝播する新しいSNSの世界を創造します。
   </p>
+
 </section>
 
+<!-- SOCIAL ISSUE -->
+
 <section class="problem">
-  <div class="label">02 / SOCIAL ISSUE</div>
+
+  <div class="section-label">02 / SOCIAL ISSUE</div>
+
   <h2>解決したい課題</h2>
+
   <p class="body">
     SNSやインターネット上では、誹謗中傷や否定的な言葉が
     社会的な問題となっています。
@@ -380,76 +718,145 @@ footer {
     ポジティブな言葉を積極的に増やすことにも着目しました。
   </p>
 
-  <div class="grid">
-    <div class="item">
-      <b>誹謗中傷・攻撃的な言葉</b>
-      <p>ネット上での否定的なコミュニケーションが人々に与える影響。</p>
+  <div class="problem-grid">
+
+    <div class="problem-card reveal">
+      <div class="number">ISSUE 01</div>
+      <h3>誹謗中傷・攻撃的な言葉</h3>
+      <p>
+        ネット上での否定的なコミュニケーションが
+        人々に与える影響。
+      </p>
     </div>
 
-    <div class="item">
-      <b>ポジティブな言葉の不足</b>
-      <p>相手を認めたり、応援したりする表現を広げる機会。</p>
+    <div class="problem-card reveal">
+      <div class="number">ISSUE 02</div>
+      <h3>ポジティブな言葉の不足</h3>
+      <p>
+        相手を認めたり、応援したりする表現を
+        広げる機会。
+      </p>
     </div>
 
-    <div class="item">
-      <b>日常的な行動へのアプローチ</b>
-      <p>普段の文字入力からコミュニケーションを見直す仕組み。</p>
+    <div class="problem-card reveal">
+      <div class="number">ISSUE 03</div>
+      <h3>日常的な行動へのアプローチ</h3>
+      <p>
+        普段の文字入力から
+        コミュニケーションを見直す仕組み。
+      </p>
     </div>
+
   </div>
+
 </section>
 
+<!-- FEATURES -->
+
 <section class="features">
-  <div class="label">03 / FEATURES</div>
+
+  <div class="section-label">03 / FEATURES</div>
+
   <h2>主な機能</h2>
 
   <div class="feature-list">
-    <div class="feature">
+
+    <div class="feature reveal">
       <div class="num">FEATURE 01</div>
       <h3>キーボード連携</h3>
-      <p>専用キーボードを通じて、普段の文字入力にポジティブフィンガー™の仕組みを取り入れます。</p>
+      <p>
+        専用キーボードを通じて、
+        普段の文字入力にポジティブフィンガーの
+        仕組みを取り入れます。
+      </p>
     </div>
 
-    <div class="feature">
+    <div class="feature reveal">
       <div class="num">FEATURE 02</div>
       <h3>ポジティブ判定</h3>
-      <p>入力された文章に登録済みのポジティブな言葉や表現が含まれるかを判定します。</p>
+      <p>
+        入力された文章に登録済みの
+        ポジティブな言葉や表現が含まれるかを判定します。
+      </p>
     </div>
 
-    <div class="feature">
+    <div class="feature reveal">
       <div class="num">FEATURE 03</div>
       <h3>ポイントシステム</h3>
-      <p>ポジティブな言葉の使用に応じてポイントを獲得する仕組みです。</p>
+      <p>
+        ポジティブな言葉の使用に応じて
+        ポイントを獲得する仕組みです。
+      </p>
     </div>
 
-    <div class="feature">
+    <div class="feature reveal">
       <div class="num">FEATURE 04</div>
       <h3>継続的な参加</h3>
-      <p>日々の文字入力を通じて、前向きなコミュニケーションを意識するきっかけをつくります。</p>
+      <p>
+        日々の文字入力を通じて、
+        前向きなコミュニケーションを
+        意識するきっかけをつくります。
+      </p>
     </div>
+
   </div>
+
 </section>
 
-<section>
-  <div class="label">04 / SYSTEM</div>
+<!-- SYSTEM -->
+
+<section class="system reveal">
+
+  <div class="section-label">04 / SYSTEM</div>
+
   <h2>システムの仕組み</h2>
-  <p class="body">文字入力から文章の判定、ポイントの反映までを連携させます。</p>
+
+  <p class="body">
+    文字入力から文章の判定、ポイントの反映までを連携させます。
+  </p>
 
   <div class="flow">
-    <span>文字を入力</span>
-    <i>→</i>
-    <span>文章を確定</span>
-    <i>→</i>
-    <span>ポジティブ判定</span>
-    <i>→</i>
-    <span>ポイント反映</span>
+
+    <div class="flow-item">
+      <strong>文字を入力</strong>
+      <small>INPUT</small>
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <div class="flow-item">
+      <strong>文章を確定</strong>
+      <small>SUBMIT</small>
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <div class="flow-item">
+      <strong>ポジティブ判定</strong>
+      <small>ANALYSIS</small>
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <div class="flow-item">
+      <strong>ポイント反映</strong>
+      <small>POINTS</small>
+    </div>
+
   </div>
+
 </section>
 
-<section class="team">
-  <div class="label">05 / DEVELOPMENT</div>
+<!-- DEVELOPMENT -->
+
+<section class="development reveal">
+
+  <div class="section-label">05 / DEVELOPMENT</div>
+
   <h2>開発について</h2>
-  <p>
-    ポジティブフィンガー™は、Can go→の最初のプロジェクトとして、
+
+  <p class="body">
+    ポジティブフィンガーは、Can go→の最初のプロジェクトとして、
     学生メンバーと担当教員によって企画・開発を進めています。
     実際に利用できるアプリケーションを目指し、
     試作・検証・改善を繰り返しています。
@@ -460,21 +867,42 @@ footer {
     <span>Android</span>
     <span>Chrome</span>
   </div>
+
 </section>
 
+<!-- CTA -->
+
 <section class="cta">
-  <div class="label">CAN GO→ / PROJECT 001</div>
-  <h2>ポジティブな言葉が<br>広がる世界へ。</h2>
-  <p>ポジティブフィンガー™</p>
-  <a class="btn" href="../index.html">Can go→ 公式サイトへ戻る</a>
+
+  <div class="section-label">CAN GO→ / PROJECT 001</div>
+
+  <h2>
+    ことばを、こほうびに。
+  </h2>
+
+  <p>
+    やさしさが伝播する新しいSNSの世界へ。
+  </p>
+
+  <a class="btn" href="../index.html">
+    Can go→ 公式サイトへ戻る
+    <span>→</span>
+  </a>
+
 </section>
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
-  <a href="../index.html" class="logo">Can go<span>→</span></a>
+
+  <a href="../index.html" class="logo">
+    Can go<span>→</span>
+  </a>
 
   <div class="social-links">
+
     <a
       href="https://www.youtube.com/@%E3%83%9D%E3%82%B8%E3%83%86%E3%82%A3%E3%83%96%E3%83%95%E3%82%A3%E3%83%B3%E3%82%AC%E3%83%BC"
       target="_blank"
@@ -483,10 +911,40 @@ footer {
     >
       ▶ YouTube
     </a>
+
   </div>
 
-  <span>© 2026 Can go→</span>
+  <small>© 2026 Can go→</small>
+
 </footer>
+
+<script>
+
+// Scroll Reveal
+
+const observer = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+
+      entry.target.classList.add('visible');
+
+      observer.unobserve(entry.target);
+
+    }
+
+  });
+
+}, {
+  threshold: 0.12
+});
+
+document.querySelectorAll('.reveal').forEach(el => {
+  observer.observe(el);
+});
+
+</script>
 
 </body>
 </html>
