@@ -585,6 +585,29 @@ footer small {
     flex-wrap: wrap;
   }
 
+  .contact-email {
+  margin: 35px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-email span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--yellow);
+}
+
+.contact-email a {
+  font-size: clamp(19px, 3vw, 28px);
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+.contact-email a:hover {
+  color: var(--yellow);
+}
   footer {
     padding: 25px 7%;
     flex-direction: column;
@@ -619,12 +642,13 @@ footer small {
     aria-label="メニュー"
     aria-expanded="false">☰</button>
 
-  <nav>
-    <a href="#about">ABOUT</a>
-    <a href="#projects">PROJECTS</a>
-    <a href="#news">NEWS</a>
-    <a href="#contact">CONTACT</a>
-  </nav>
+ <nav>
+  <a href="#about">ABOUT</a>
+  <a href="#projects">PROJECTS</a>
+  <a href="members.html">MEMBERS</a>
+  <a href="#news">NEWS</a>
+  <a href="#contact">CONTACT</a>
+ </nav>
 </header>
 
 <main>
@@ -741,10 +765,32 @@ footer small {
     Can go→の活動やプロジェクトについてのお問い合わせ。
   </p>
 
-  <a class="btn" href="mailto:">
-    CONTACT US　→
+  
+<section class="contact" id="contact">
+  <div class="label">04 / CONTACT</div>
+
+  <h2>Let's move forward.</h2>
+
+  <p>
+    Can go→の活動やプロジェクトについてのお問い合わせは、
+    以下のメールアドレスまでご連絡ください。
+  </p>
+
+  <div class="contact-email">
+    <span>OFFICIAL CONTACT EMAIL</span>
+    <a href="mailto:cango.office@gmail.com">
+      cango.office@gmail.com
+    </a>
+  </div>
+
+  <a
+    class="btn"
+    href="mailto:cango.office@gmail.com?subject=Can%20go%E2%86%92%20%E3%81%B8%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B"
+  >
+    メールを作成する　→
   </a>
 </section>
+
 
 </main>
 
