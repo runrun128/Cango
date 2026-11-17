@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#FFD32D">
 <meta name="description" content="Can go→。アイデアを形にし、新しい可能性を生み出すプロジェクトチーム。">
+
 <title>Can go→ | Official Website</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,6 +71,7 @@ header {
   font-size: 27px;
   font-weight: 900;
   letter-spacing: -1.8px;
+  white-space: nowrap;
 }
 
 .logo span {
@@ -78,7 +80,7 @@ header {
 
 nav {
   display: flex;
-  gap: 35px;
+  gap: 30px;
   align-items: center;
 }
 
@@ -99,6 +101,7 @@ nav a:hover {
   background: none;
   font-size: 25px;
   cursor: pointer;
+  color: var(--ink);
 }
 
 /* HERO */
@@ -157,6 +160,7 @@ h1 span {
   letter-spacing: 1px;
   border: 2px solid var(--ink);
   transition: .25s;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -184,6 +188,7 @@ h1 span {
   line-height: 1;
   background: var(--yellow);
   z-index: 1;
+  pointer-events: none;
 }
 
 .hero-decoration::after {
@@ -363,6 +368,48 @@ h2 {
   color: var(--pink);
 }
 
+/* MEMBERS */
+
+.members {
+  background: white;
+}
+
+.members-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.members-content h3 {
+  font-size: 25px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.members-content p {
+  color: var(--gray);
+  font-size: 13px;
+}
+
+.members-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+  padding: 16px 24px;
+  background: var(--yellow);
+  border: 2px solid var(--ink);
+  font-size: 11px;
+  font-weight: 900;
+  white-space: nowrap;
+  transition: .25s;
+}
+
+.members-link:hover {
+  background: var(--ink);
+  color: white;
+}
+
 /* NEWS */
 
 .news {
@@ -422,6 +469,32 @@ h2 {
   margin-bottom: 35px;
 }
 
+.contact-email {
+  margin: 35px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-email span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--yellow);
+}
+
+.contact-email a {
+  font-size: clamp(19px, 3vw, 28px);
+  font-weight: 800;
+  letter-spacing: .5px;
+  transition: .2s;
+  overflow-wrap: anywhere;
+}
+
+.contact-email a:hover {
+  color: var(--yellow);
+}
+
 .contact .btn {
   background: var(--yellow);
   color: var(--ink);
@@ -465,9 +538,13 @@ footer small {
 
 /* RESPONSIVE */
 
-@media(max-width: 800px) {
+@media(max-width: 900px) {
   header {
     padding: 0 6%;
+  }
+
+  nav {
+    gap: 18px;
   }
 
   .hero {
@@ -476,11 +553,10 @@ footer small {
   }
 
   .hero-decoration {
-    width: 190px;
-    height: 190px;
-    font-size: 110px;
-    right: -50px;
-    top: 75%;
+    width: 220px;
+    height: 220px;
+    font-size: 125px;
+    right: -25px;
     opacity: .25;
   }
 
@@ -497,9 +573,12 @@ footer small {
   }
 }
 
+/* MOBILE */
+
 @media(max-width: 600px) {
   header {
     height: 68px;
+    padding: 0 6%;
   }
 
   .menu {
@@ -524,6 +603,10 @@ footer small {
     display: flex;
   }
 
+  nav a {
+    font-size: 12px;
+  }
+
   .hero {
     min-height: 560px;
     padding: 75px 7%;
@@ -535,6 +618,9 @@ footer small {
   }
 
   .hero-decoration {
+    width: 190px;
+    height: 190px;
+    font-size: 110px;
     right: -45px;
     top: 77%;
   }
@@ -580,34 +666,32 @@ footer small {
     font-size: 23px;
   }
 
+  .members-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .members-content h3 {
+    font-size: 22px;
+  }
+
   .news-item {
     gap: 15px;
     flex-wrap: wrap;
   }
 
-  .contact-email {
-  margin: 35px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+  .contact {
+    padding: 80px 7%;
+  }
 
-.contact-email span {
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: var(--yellow);
-}
+  .contact h2 {
+    font-size: 36px;
+  }
 
-.contact-email a {
-  font-size: clamp(19px, 3vw, 28px);
-  font-weight: 800;
-  letter-spacing: .5px;
-}
+  .contact-email a {
+    font-size: 20px;
+  }
 
-.contact-email a:hover {
-  color: var(--yellow);
-}
   footer {
     padding: 25px 7%;
     flex-direction: column;
@@ -618,7 +702,9 @@ footer small {
 /* REDUCED MOTION */
 
 @media(prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     scroll-behavior: auto !important;
     transition-duration: .01ms !important;
     animation-duration: .01ms !important;
@@ -634,21 +720,27 @@ footer small {
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-  <a class="logo" href="#">Can go<span>→</span></a>
+  <a class="logo" href="index.html">
+    Can go<span>→</span>
+  </a>
 
-  <button class="menu"
-    onclick="document.querySelector('nav').classList.toggle('open')"
-    aria-label="メニュー"
-    aria-expanded="false">☰</button>
+  <button
+    class="menu"
+    aria-label="メニューを開く"
+    aria-expanded="false"
+    aria-controls="main-nav"
+  >☰</button>
 
- <nav>
-  <a href="#about">ABOUT</a>
-  <a href="#projects">PROJECTS</a>
-  <a href="members.html">MEMBERS</a>
-  <a href="#news">NEWS</a>
-  <a href="#contact">CONTACT</a>
- </nav>
+  <nav id="main-nav">
+    <a href="#about">ABOUT</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="members.html">MEMBERS</a>
+    <a href="#news">NEWS</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
 </header>
 
 <main>
@@ -657,6 +749,7 @@ footer small {
 
 <div class="hero">
   <div class="hero-inner">
+
     <div class="eyebrow">IDEAS INTO REALITY.</div>
 
     <h1>
@@ -672,6 +765,7 @@ footer small {
     <a class="btn" href="#projects">
       OUR PROJECTS <span>→</span>
     </a>
+
   </div>
 
   <div class="hero-decoration">→</div>
@@ -680,13 +774,18 @@ footer small {
 <!-- ABOUT -->
 
 <section class="about" id="about">
+
   <div class="label">01 / ABOUT</div>
+
   <h2>Can go→について</h2>
 
   <div class="about-grid reveal">
+
     <h3>
       アイデアを考えるだけで終わらせない。<br>
-      <span class="about-highlight">実際に形にし、社会へ届ける。</span>
+      <span class="about-highlight">
+        実際に形にし、社会へ届ける。
+      </span>
     </h3>
 
     <p>
@@ -696,12 +795,15 @@ footer small {
       小さなアイデアから、実際に使われるサービスへ。
       私たちは可能性を形にしていきます。
     </p>
+
   </div>
+
 </section>
 
 <!-- PROJECTS -->
 
 <section class="projects" id="projects">
+
   <div class="label">02 / PROJECTS</div>
 
   <div class="section-heading">
@@ -713,14 +815,17 @@ footer small {
      href="project/positivefinger.html">
 
     <div class="project-art">
+
       <img
         src="images/positivefinger-icon.png"
         alt="ポジティブフィンガーのアプリアイコン"
         class="project-icon"
       >
+
     </div>
 
     <div class="project-info">
+
       <div class="number">PROJECT 001</div>
 
       <h3>ポジティブフィンガー</h3>
@@ -731,43 +836,68 @@ footer small {
       </p>
 
       <span class="link">VIEW PROJECT　→</span>
+
     </div>
+
   </a>
+
+</section>
+
+<!-- MEMBERS -->
+
+<section class="members" id="members">
+
+  <div class="label">03 / OUR TEAM</div>
+
+  <h2>メンバー</h2>
+
+  <div class="members-content reveal">
+
+    <div>
+      <h3>Ideas are created by people.</h3>
+      <p>
+        それぞれの得意分野を活かし、<br>
+        チームで新しい可能性に挑戦しています。
+      </p>
+    </div>
+
+    <a href="members.html" class="members-link">
+      MEET OUR MEMBERS <span>→</span>
+    </a>
+
+  </div>
+
 </section>
 
 <!-- NEWS -->
 
 <section class="news" id="news">
-  <div class="label">03 / NEWS</div>
+
+  <div class="label">04 / NEWS</div>
+
   <h2>お知らせ</h2>
 
   <div class="news-list">
+
     <div class="news-item">
-      <time>2026.11</time>
+      <time datetime="2026-11">2026.11</time>
       <span>Can go→ 公式サイト制作</span>
     </div>
 
     <div class="news-item">
-      <time>2026.11</time>
+      <time datetime="2026-11">2026.11</time>
       <span>PROJECT 001 ポジティブフィンガー</span>
     </div>
+
   </div>
+
 </section>
 
 <!-- CONTACT -->
 
 <section class="contact" id="contact">
-  <div class="label">04 / CONTACT</div>
 
-  <h2>Let's move forward.</h2>
-
-  <p>
-    Can go→の活動やプロジェクトについてのお問い合わせ。
-  </p>
-
-  
-<section class="contact" id="contact">
-  <div class="label">04 / CONTACT</div>
+  <div class="label">05 / CONTACT</div>
 
   <h2>Let's move forward.</h2>
 
@@ -777,64 +907,116 @@ footer small {
   </p>
 
   <div class="contact-email">
+
     <span>OFFICIAL CONTACT EMAIL</span>
+
     <a href="mailto:cango.office@gmail.com">
       cango.office@gmail.com
     </a>
+
   </div>
 
   <a
     class="btn"
     href="mailto:cango.office@gmail.com?subject=Can%20go%E2%86%92%20%E3%81%B8%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B"
   >
-    メールを作成する　→
+    メールを作成する <span>→</span>
   </a>
-</section>
 
+</section>
 
 </main>
 
 <!-- FOOTER -->
 
 <footer>
-  <a class="logo" href="#">Can go<span>→</span></a>
-  <small>© 2026 Can go→</small>
+
+  <a class="logo" href="index.html">
+    Can go<span>→</span>
+  </a>
+
+  <small>
+    © 2026 Can go→. All Rights Reserved.
+  </small>
+
 </footer>
 
+<!-- JAVASCRIPT -->
+
 <script>
+
 // Mobile Navigation
 
 const menuButton = document.querySelector('.menu');
-const nav = document.querySelector('nav');
+const nav = document.querySelector('#main-nav');
 
 menuButton.addEventListener('click', () => {
+
   const isOpen = nav.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', isOpen);
+
+  menuButton.setAttribute('aria-expanded', String(isOpen));
+
+  menuButton.setAttribute(
+    'aria-label',
+    isOpen ? 'メニューを閉じる' : 'メニューを開く'
+  );
+
+  menuButton.textContent = isOpen ? '×' : '☰';
+
 });
 
-document.querySelectorAll('nav a').forEach(a => {
-  a.addEventListener('click', () => {
+// Close menu after clicking a link
+
+document.querySelectorAll('#main-nav a').forEach(link => {
+
+  link.addEventListener('click', () => {
+
     nav.classList.remove('open');
+
     menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'メニューを開く');
+    menuButton.textContent = '☰';
+
   });
+
 });
 
 // Scroll Reveal
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.12
-});
+const revealElements = document.querySelectorAll('.reveal');
 
-document.querySelectorAll('.reveal').forEach(el => {
-  observer.observe(el);
-});
+if ('IntersectionObserver' in window) {
+
+  const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add('visible');
+
+        observer.unobserve(entry.target);
+
+      }
+
+    });
+
+  }, {
+    threshold: 0.12
+  });
+
+  revealElements.forEach(element => {
+    observer.observe(element);
+  });
+
+} else {
+
+  revealElements.forEach(element => {
+    element.classList.add('visible');
+  });
+
+}
+
 </script>
 
 </body>
