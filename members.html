@@ -28,7 +28,9 @@
   padding: 0;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: Inter, "Noto Sans JP", sans-serif;
@@ -37,7 +39,10 @@ body {
   line-height: 1.8;
 }
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 /* HEADER */
 header {
@@ -59,7 +64,9 @@ header {
   letter-spacing: -1.8px;
 }
 
-.logo span { color: #D4A900; }
+.logo span {
+  color: #D4A900;
+}
 
 nav {
   display: flex;
@@ -73,7 +80,9 @@ nav a {
   letter-spacing: 1.5px;
 }
 
-nav a:hover { color: #B18D00; }
+nav a:hover {
+  color: #B18D00;
+}
 
 /* HERO */
 .hero {
@@ -103,7 +112,9 @@ h1 {
 }
 
 /* CONTENT */
-section { padding: 100px 12%; }
+section {
+  padding: 100px 12%;
+}
 
 .label {
   font-size: 11px;
@@ -135,6 +146,7 @@ h2 {
   background: white;
   border: 2px solid var(--ink);
   transition: .25s;
+  overflow: hidden;
 }
 
 .member-card:hover {
@@ -142,9 +154,11 @@ h2 {
   box-shadow: 7px 7px 0 var(--ink);
 }
 
+/* GIF IMAGE */
 .member-visual {
-  height: 220px;
-  background: var(--yellow);
+  width: 100%;
+  aspect-ratio: 1075 / 1440;
+  background: #F5F5F5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,22 +167,30 @@ h2 {
   overflow: hidden;
 }
 
-.member-visual::after {
-  content: attr(data-number);
-  position: absolute;
-  font-size: 110px;
-  font-weight: 900;
-  color: #17171718;
+.member-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
-.member-initial {
-  font-size: 75px;
-  font-weight: 900;
-  position: relative;
-  z-index: 1;
+.member-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .4s;
 }
 
-.member-info { padding: 25px; }
+.member-card:hover .member-visual img {
+  transform: scale(1.04);
+}
+
+.member-info {
+  padding: 25px;
+}
 
 .member-number {
   font-size: 10px;
@@ -206,7 +228,9 @@ h2 {
   padding: 100px 12%;
 }
 
-.message .label { color: var(--yellow); }
+.message .label {
+  color: var(--yellow);
+}
 
 .message h2 {
   font-size: clamp(30px, 5vw, 55px);
@@ -233,19 +257,46 @@ footer small {
   color: var(--gray);
 }
 
+/* RESPONSIVE */
 @media(max-width: 800px) {
-  section { padding: 75px 7%; }
-  .hero { padding: 85px 7%; }
-  .member-grid { grid-template-columns: repeat(2, 1fr); }
+  section {
+    padding: 75px 7%;
+  }
+
+  .hero {
+    padding: 85px 7%;
+  }
+
+  .member-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media(max-width: 550px) {
-  header { padding: 0 6%; }
-  nav { gap: 12px; }
-  nav a { font-size: 9px; }
-  h1 { letter-spacing: -3px; }
-  .member-grid { grid-template-columns: 1fr; }
-  .member-visual { height: 190px; }
+  header {
+    padding: 0 6%;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 9px;
+  }
+
+  h1 {
+    letter-spacing: -3px;
+  }
+
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .member-visual {
+    height: 260px;
+  }
+
   footer {
     flex-direction: column;
     gap: 12px;
@@ -270,6 +321,7 @@ footer small {
 
 <main>
 
+<!-- HERO -->
 <div class="hero">
   <div class="eyebrow">OUR TEAM / 2026</div>
   <h1>Meet the<br>Members.</h1>
@@ -278,6 +330,7 @@ footer small {
   </p>
 </div>
 
+<!-- MEMBERS -->
 <section>
   <div class="label">01 / MEMBERS</div>
   <h2>メンバー紹介</h2>
@@ -289,8 +342,8 @@ footer small {
 
     <!-- MEMBER 01 -->
     <article class="member-card">
-      <div class="member-visual" data-number="01">
-        <span class="member-initial">01</span>
+      <div class="member-visual">
+        <img src="images/member01.gif" alt="メンバー01">
       </div>
       <div class="member-info">
         <div class="member-number">MEMBER 01</div>
@@ -305,8 +358,8 @@ footer small {
 
     <!-- MEMBER 02 -->
     <article class="member-card">
-      <div class="member-visual" data-number="02">
-        <span class="member-initial">02</span>
+      <div class="member-visual">
+        <img src="images/member02.gif" alt="メンバー02">
       </div>
       <div class="member-info">
         <div class="member-number">MEMBER 02</div>
@@ -321,8 +374,8 @@ footer small {
 
     <!-- MEMBER 03 -->
     <article class="member-card">
-      <div class="member-visual" data-number="03">
-        <span class="member-initial">03</span>
+      <div class="member-visual">
+        <img src="images/member03.gif" alt="メンバー03">
       </div>
       <div class="member-info">
         <div class="member-number">MEMBER 03</div>
@@ -337,8 +390,8 @@ footer small {
 
     <!-- MEMBER 04 -->
     <article class="member-card">
-      <div class="member-visual" data-number="04">
-        <span class="member-initial">04</span>
+      <div class="member-visual">
+        <img src="images/member04.gif" alt="メンバー04">
       </div>
       <div class="member-info">
         <div class="member-number">MEMBER 04</div>
@@ -353,8 +406,8 @@ footer small {
 
     <!-- MEMBER 05 -->
     <article class="member-card">
-      <div class="member-visual" data-number="05">
-        <span class="member-initial">05</span>
+      <div class="member-visual">
+        <img src="images/member05.gif" alt="メンバー05">
       </div>
       <div class="member-info">
         <div class="member-number">MEMBER 05</div>
@@ -369,8 +422,8 @@ footer small {
 
     <!-- MEMBER 06 -->
     <article class="member-card">
-      <div class="member-visual" data-number="06">
-        <span class="member-initial">06</span>
+      <div class="member-visual">
+        <img src="images/member06.gif" alt="メンバー06">
       </div>
       <div class="member-info">
         <div class="member-number">MEMBER 06</div>
@@ -386,6 +439,7 @@ footer small {
   </div>
 </section>
 
+<!-- PHILOSOPHY -->
 <div class="message">
   <div class="label">OUR PHILOSOPHY</div>
   <h2>Ideas into Reality.</h2>
@@ -396,6 +450,7 @@ footer small {
 
 </main>
 
+<!-- FOOTER -->
 <footer>
   <a class="logo" href="index.html">Can go<span>→</span></a>
   <small>© 2026 Can go→. All Rights Reserved.</small>
