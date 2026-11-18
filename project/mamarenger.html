@@ -1,0 +1,1169 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#7850B5">
+<meta name="description" content="ママレンジャーナリング。書くことから始まる、宮崎の子育て支援。子育て中の気持ちを安心して書き出せる新しい仕組みを目指します。">
+
+<title>ママレンジャーナリング | 書くことから始まる子育て支援</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --purple: #7850B5;
+  --purple-dark: #56368A;
+  --purple-light: #F1EBFA;
+  --red: #E84032;
+  --pink: #F47C9F;
+  --yellow: #FFD978;
+  --ink: #30251F;
+  --muted: #81766F;
+  --white: #FFFFFF;
+  --bg: #FCFAF7;
+  --line: #EAE2DA;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  font-family: Inter, "Noto Sans JP", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.9;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* HEADER */
+
+header {
+  height: 76px;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: var(--purple);
+}
+
+.logo small {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  line-height: 1;
+}
+
+nav {
+  display: flex;
+  gap: 27px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+nav a:hover {
+  color: var(--purple);
+}
+
+.menu {
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 25px;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 650px;
+  padding: 75px 11%;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 30px;
+  background: var(--purple-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "✦";
+  position: absolute;
+  right: -30px;
+  top: 20px;
+  font-size: 350px;
+  color: #7850B508;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--purple);
+  margin-bottom: 23px;
+}
+
+h1 {
+  font-size: clamp(39px, 5.5vw, 68px);
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: -2px;
+}
+
+h1 span {
+  color: var(--purple);
+}
+
+.hero-description {
+  margin-top: 25px;
+  font-size: 15px;
+  color: #655A62;
+  line-height: 2.2;
+}
+
+.hero-description strong {
+  color: var(--purple-dark);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 35px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 14px 23px;
+  background: var(--purple);
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  border: 2px solid var(--purple);
+  transition: .25s;
+}
+
+.btn:hover {
+  background: var(--purple-dark);
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--purple);
+}
+
+.btn-outline:hover {
+  color: white;
+}
+
+.hero-visual {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-visual img {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 15px #30251F12);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.sparkle {
+  position: absolute;
+  color: var(--red);
+  font-size: 35px;
+}
+
+.sparkle.one {
+  top: 5%;
+  right: 5%;
+}
+
+.sparkle.two {
+  bottom: 10%;
+  left: 0;
+  color: #E5A900;
+}
+
+/* COMMON */
+
+section {
+  padding: 105px 12%;
+}
+
+.section-label {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--purple);
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: clamp(28px, 4vw, 39px);
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1.5;
+  margin-bottom: 35px;
+}
+
+.lead {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 2;
+}
+
+.body {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 780px;
+  margin-top: 22px;
+  line-height: 2.3;
+}
+
+/* CONCEPT */
+
+.concept {
+  background: white;
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.concept-quote {
+  padding: 35px;
+  background: var(--purple-light);
+  border-left: 5px solid var(--purple);
+}
+
+.concept-quote p {
+  font-size: 23px;
+  font-weight: 900;
+  line-height: 1.8;
+  color: var(--purple-dark);
+}
+
+.concept-quote small {
+  display: block;
+  margin-top: 18px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+/* ISSUE */
+
+.issue {
+  background: var(--ink);
+  color: white;
+}
+
+.issue .section-label {
+  color: var(--yellow);
+}
+
+.issue .body {
+  color: #D2C8C1;
+}
+
+.issue-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+  margin-top: 40px;
+}
+
+.issue-card {
+  padding: 27px;
+  background: #40332D;
+  border: 1px solid #59483F;
+  transition: .25s;
+}
+
+.issue-card:hover {
+  transform: translateY(-5px);
+  background: #514037;
+}
+
+.issue-card .number {
+  font-size: 11px;
+  font-weight: 900;
+  color: var(--yellow);
+  letter-spacing: 2px;
+}
+
+.issue-card h3 {
+  font-size: 17px;
+  margin: 15px 0 10px;
+}
+
+.issue-card p {
+  color: #D2C8C1;
+  font-size: 12px;
+}
+
+/* SERVICE */
+
+.service {
+  background: var(--bg);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.service-card {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 30px;
+  transition: .25s;
+}
+
+.service-card:hover {
+  border-color: var(--purple);
+  transform: translateY(-4px);
+}
+
+.service-card .num {
+  font-size: 11px;
+  color: var(--purple);
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.service-card h3 {
+  font-size: 19px;
+  margin: 12px 0;
+  font-weight: 900;
+}
+
+.service-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2.1;
+}
+
+.service-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* FLOW */
+
+.flow-section {
+  background: var(--purple-light);
+}
+
+.flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 45px;
+}
+
+.flow-item {
+  background: white;
+  padding: 24px 15px;
+  text-align: center;
+  border-bottom: 4px solid var(--purple);
+}
+
+.flow-item .number {
+  font-size: 11px;
+  font-weight: 900;
+  color: var(--purple);
+  letter-spacing: 2px;
+}
+
+.flow-item h3 {
+  font-size: 15px;
+  margin: 12px 0 8px;
+}
+
+.flow-item p {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* RANGER */
+
+.ranger {
+  background: white;
+}
+
+.ranger-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.ranger-box {
+  background: var(--yellow);
+  padding: 40px;
+  text-align: center;
+}
+
+.ranger-box .symbol {
+  font-size: 75px;
+  line-height: 1.3;
+}
+
+.ranger-box h3 {
+  font-size: 23px;
+  font-weight: 900;
+  margin: 10px 0;
+}
+
+.ranger-box p {
+  font-size: 12px;
+  color: #67532B;
+}
+
+/* SAFETY */
+
+.safety {
+  background: #F2EBE5;
+}
+
+.safety-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 35px;
+}
+
+.safety-item {
+  padding: 25px;
+  background: white;
+}
+
+.safety-item h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.safety-item p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* MIYAZAKI */
+
+.miyazaki {
+  background: white;
+}
+
+.miyazaki-banner {
+  margin-top: 35px;
+  padding: 45px;
+  background: var(--purple);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.miyazaki-banner::after {
+  content: "MIYAZAKI";
+  position: absolute;
+  right: -15px;
+  bottom: -55px;
+  font-size: 100px;
+  font-weight: 900;
+  color: #FFFFFF12;
+  pointer-events: none;
+}
+
+.miyazaki-banner h3 {
+  font-size: 26px;
+  font-weight: 900;
+  position: relative;
+  z-index: 1;
+}
+
+.miyazaki-banner p {
+  font-size: 13px;
+  color: #F0E9F8;
+  margin-top: 15px;
+  max-width: 650px;
+  position: relative;
+  z-index: 1;
+}
+
+/* MESSAGE */
+
+.message {
+  padding: 110px 10%;
+  background: var(--yellow);
+  text-align: center;
+}
+
+.message .section-label {
+  color: #71551C;
+}
+
+.message h2 {
+  font-size: clamp(30px, 5vw, 52px);
+  margin-bottom: 20px;
+}
+
+.message p {
+  font-size: 13px;
+  color: #66552D;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 35px 8%;
+  background: var(--ink);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo {
+  font-size: 18px;
+  font-weight: 900;
+  color: white;
+}
+
+footer small {
+  color: #C4B8B0;
+  font-size: 10px;
+}
+
+/* REVEAL */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: .7s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+  .hero {
+    padding: 70px 7%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section {
+    padding: 80px 7%;
+  }
+
+  .issue-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 650px) {
+  header {
+    padding: 0 6%;
+    height: 65px;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 25px 7%;
+    flex-direction: column;
+    gap: 18px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .hero {
+    padding: 65px 7%;
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 20px;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .hero-visual img {
+    max-width: 290px;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  section {
+    padding: 75px 7%;
+  }
+
+  h2 {
+    font-size: 29px;
+  }
+
+  .concept-grid,
+  .ranger-content,
+  .service-grid,
+  .safety-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .issue-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flow {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .concept-quote {
+    padding: 25px;
+  }
+
+  .miyazaki-banner {
+    padding: 30px;
+  }
+
+  .miyazaki-banner h3 {
+    font-size: 21px;
+  }
+
+  .message {
+    padding: 80px 7%;
+  }
+
+  footer {
+    padding: 30px 7%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="#" class="logo">
+    ママレンジャーナリング
+    <small>MAMA RANGER JOURNALING</small>
+  </a>
+
+  <button class="menu" aria-label="メニュー">☰</button>
+
+  <nav>
+    <a href="#concept">CONCEPT</a>
+    <a href="#issue">ISSUE</a>
+    <a href="#service">SERVICE</a>
+    <a href="#flow">HOW IT WORKS</a>
+    <a href="#about">ABOUT</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<div class="hero">
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      MIYAZAKI / CHILDCARE SUPPORT PROJECT
+    </div>
+
+    <h1>
+      書くことから、<br>
+      <span>はじまる。</span><br>
+      子育て支援。
+    </h1>
+
+    <p class="hero-description">
+      子育ての喜びも、不安も、何気ない気持ちも。<br>
+      <strong>ひとりで抱え込まないための、新しい仕組み。</strong>
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#concept" class="btn">
+        PROJECT CONCEPT <span>→</span>
+      </a>
+
+      <a href="#service" class="btn btn-outline">
+        ABOUT PROJECT
+      </a>
+    </div>
+
+  </div>
+
+  <div class="hero-visual">
+    <span class="sparkle one">✦</span>
+    <span class="sparkle two">✦</span>
+
+    <img
+      src="../images/hero_mama_transparent.png"
+      alt="ママレンジャーナリングのキャラクター"
+    >
+  </div>
+
+</div>
+
+<!-- CONCEPT -->
+
+<section class="concept reveal" id="concept">
+
+  <div class="section-label">01 / CONCEPT</div>
+
+  <h2>気持ちを書き出すことから、<br>子育てを支える。</h2>
+
+  <div class="concept-grid">
+
+    <div>
+      <p class="lead">
+        相談するほどではない。<br>
+        でも、誰かに聞いてほしい。
+      </p>
+
+      <p class="body">
+        子育ての悩みは、いつも相談窓口に届くとは限りません。
+        忙しさや遠慮から、自分の気持ちを言葉にできないこともあります。
+
+        ママレンジャーナリングは、そんな日々の気持ちを
+        匿名で自由に書き出せる場所をつくることを目指しています。
+      </p>
+    </div>
+
+    <div class="concept-quote">
+      <p>
+        「相談する」よりも、<br>
+        まずは「書いてみる」。
+      </p>
+
+      <small>
+        A NEW APPROACH TO CHILDCARE SUPPORT
+      </small>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ISSUE -->
+
+<section class="issue" id="issue">
+
+  <div class="section-label">02 / SOCIAL ISSUE</div>
+
+  <h2>見えにくい子育ての気持ち。</h2>
+
+  <p class="body">
+    子育てには、喜びだけでなく、不安や孤独、疲れなど、
+    さまざまな感情があります。
+    その声が周囲に届かないままになってしまうこともあります。
+  </p>
+
+  <div class="issue-grid">
+
+    <div class="issue-card reveal">
+      <div class="number">ISSUE 01</div>
+      <h3>相談するハードル</h3>
+      <p>
+        相談窓口に連絡するほどではないと感じ、
+        気持ちを抱え込んでしまう。
+      </p>
+    </div>
+
+    <div class="issue-card reveal">
+      <div class="number">ISSUE 02</div>
+      <h3>時間や環境の制約</h3>
+      <p>
+        子育てや家事に追われ、
+        自分の気持ちと向き合う時間が少ない。
+      </p>
+    </div>
+
+    <div class="issue-card reveal">
+      <div class="number">ISSUE 03</div>
+      <h3>声が届きにくい</h3>
+      <p>
+        日々の小さな悩みや気づきが、
+        支援する側に届きにくい。
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SERVICE -->
+
+<section class="service" id="service">
+
+  <div class="section-label">03 / PROJECT FEATURES</div>
+
+  <h2>ママレンジャーナリングの仕組み</h2>
+
+  <p class="body">
+    書くこと、人が受け止めること、そして必要な支援につなぐこと。
+    それぞれの役割を組み合わせた子育て支援の仕組みを構想しています。
+  </p>
+
+  <div class="service-grid">
+
+    <div class="service-card reveal">
+      <div class="service-icon">📖</div>
+      <div class="num">FEATURE 01</div>
+      <h3>匿名ジャーナリング</h3>
+      <p>
+        ニックネームで参加し、日々の気持ちや悩みを自由に記録。
+        文字だけでなく音声入力にも対応することを想定しています。
+      </p>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-icon">🦸</div>
+      <div class="num">FEATURE 02</div>
+      <h3>ママレンジャー</h3>
+      <p>
+        子育て経験のある人がレンジャーとして参加。
+        投稿者の気持ちを受け止め、1日1通を目安にメッセージを届ける仕組みです。
+      </p>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-icon">✦</div>
+      <div class="num">FEATURE 03</div>
+      <h3>AIによるサポート</h3>
+      <p>
+        AIが投稿や返信の安全確認、緊急性の確認などを補助。
+        AI自身が相談相手になるのではなく、人による対応を支援します。
+      </p>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-icon">🌱</div>
+      <div class="num">FEATURE 04</div>
+      <h3>地域の声を未来へ</h3>
+      <p>
+        個人が特定されないよう配慮して声を集約し、
+        地域の子育て支援や施策の改善に役立てることを目指します。
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FLOW -->
+
+<section class="flow-section" id="flow">
+
+  <div class="section-label">04 / HOW IT WORKS</div>
+
+  <h2>利用の流れ</h2>
+
+  <p class="body">
+    気持ちを書き出すところから、必要な支援につながるまで。
+  </p>
+
+  <div class="flow">
+
+    <div class="flow-item">
+      <div class="number">STEP 01</div>
+      <h3>気持ちを書く</h3>
+      <p>匿名で自由に気持ちを記録する。</p>
+    </div>
+
+    <div class="flow-item">
+      <div class="number">STEP 02</div>
+      <h3>人が受け止める</h3>
+      <p>レンジャーが投稿を確認する。</p>
+    </div>
+
+    <div class="flow-item">
+      <div class="number">STEP 03</div>
+      <h3>必要な支援へ</h3>
+      <p>必要に応じて適切な相談先につなぐ。</p>
+    </div>
+
+    <div class="flow-item">
+      <div class="number">STEP 04</div>
+      <h3>地域に活かす</h3>
+      <p>匿名化した声を支援の改善に役立てる。</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- RANGER -->
+
+<section class="ranger reveal">
+
+  <div class="section-label">05 / MAMA RANGER</div>
+
+  <h2>ひとりじゃない。<br>受け止めてくれる人がいる。</h2>
+
+  <div class="ranger-content">
+
+    <div>
+      <p class="lead">
+        ママレンジャーは、<br>
+        子育ての経験を持つサポーター。
+      </p>
+
+      <p class="body">
+        子育てを経験した人が、今まさに子育てをしている人の
+        気持ちを受け止める。
+
+        専門家による相談とは異なる、
+        経験者同士だからこそ生まれるつながりを大切にします。
+
+        参加者には研修や利用規約を設け、
+        安心して活動できる仕組みを検討します。
+      </p>
+    </div>
+
+    <div class="ranger-box">
+      <div class="symbol">✦</div>
+      <h3>YOUR EXPERIENCE<br>CAN SUPPORT SOMEONE.</h3>
+      <p>あなたの経験が、誰かの支えになる。</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SAFETY -->
+
+<section class="safety reveal">
+
+  <div class="section-label">06 / SAFETY & PRIVACY</div>
+
+  <h2>安心して利用できる仕組みへ。</h2>
+
+  <p class="body">
+    気持ちを安心して書き出せる場所にするために、
+    プライバシーと安全性を大切にします。
+  </p>
+
+  <div class="safety-grid">
+
+    <div class="safety-item">
+      <h3>匿名での参加</h3>
+      <p>
+        ニックネームで利用できる仕組みを想定。
+        個人情報の取り扱いにも配慮します。
+      </p>
+    </div>
+
+    <div class="safety-item">
+      <h3>1対1の非公開コミュニケーション</h3>
+      <p>
+        投稿と返信は公開の場ではなく、
+        個別のやり取りを基本とする構想です。
+      </p>
+    </div>
+
+    <div class="safety-item">
+      <h3>AIによる安全確認</h3>
+      <p>
+        有害な表現や緊急性の高い投稿を確認し、
+        人による適切な対応を補助します。
+      </p>
+    </div>
+
+    <div class="safety-item">
+      <h3>必要な相談先への接続</h3>
+      <p>
+        専門的な対応が必要な場合には、
+        適切な相談窓口への接続を目指します。
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- MIYAZAKI -->
+
+<section class="miyazaki reveal" id="about">
+
+  <div class="section-label">07 / FOR MIYAZAKI</div>
+
+  <h2>宮崎の子育てを、もっと支えやすく。</h2>
+
+  <p class="body">
+    一人ひとりの声には、地域の子育て環境をより良くする
+    ヒントが隠れています。
+
+    ママレンジャーナリングは、日々の小さな声を
+    地域の支援につなげることを目指します。
+  </p>
+
+  <div class="miyazaki-banner">
+    <h3>書くことから始まる、<br>宮崎の子育て支援。</h3>
+
+    <p>
+      個人の気持ちを大切にしながら、
+      地域全体で子育てを支える新しい仕組みへ。
+    </p>
+  </div>
+
+</section>
+
+<!-- MESSAGE -->
+
+<section class="message">
+
+  <div class="section-label">MAMA RANGER JOURNALING</div>
+
+  <h2>
+    あなたの気持ちを、<br>
+    ひとりにしない。
+  </h2>
+
+  <p>
+    書くことから始まる、新しい子育て支援のかたち。
+  </p>
+
+</section>
+
+</main>
+
+<footer>
+
+  <div>
+    <div class="footer-logo">ママレンジャーナリング</div>
+    <small>MAMA RANGER JOURNALING</small>
+  </div>
+
+  <small>© 2026 MAMA RANGER JOURNALING</small>
+
+</footer>
+
+<script>
+const menu = document.querySelector('.menu');
+const nav = document.querySelector('nav');
+
+menu.addEventListener('click', () => {
+  nav.classList.toggle('open');
+});
+
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+  });
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.12
+});
+
+document.querySelectorAll('.reveal').forEach(el => {
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
