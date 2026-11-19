@@ -267,6 +267,110 @@ h2 {
   padding: 2px 5px;
 }
 
+/* WHO WE ARE */
+
+.who-we-are {
+  background: var(--yellow);
+  padding: 110px 12%;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+
+.who-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 35px;
+}
+
+.who-header .label {
+  margin-bottom: 12px;
+}
+
+.who-header h2 {
+  margin-bottom: 0;
+  font-size: clamp(38px, 6vw, 65px);
+  letter-spacing: -2px;
+}
+
+.who-number {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.who-photo {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+  border: 2px solid var(--ink);
+  box-shadow: 9px 9px 0 var(--ink);
+}
+
+.who-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 22px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.who-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  margin-top: 75px;
+  align-items: start;
+}
+
+.who-content h3 {
+  font-size: clamp(25px, 3vw, 36px);
+  line-height: 1.6;
+  font-weight: 900;
+}
+
+.who-content h3 span {
+  background: white;
+  padding: 2px 6px;
+}
+
+.who-content p {
+  font-size: 14px;
+  line-height: 2.3;
+  font-weight: 500;
+}
+
+.who-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 75px;
+  border-top: 2px solid var(--ink);
+}
+
+.who-value {
+  padding: 25px 20px 0 0;
+}
+
+.who-value:not(:first-child) {
+  border-left: 1px solid var(--ink);
+  padding-left: 20px;
+}
+
+.who-value strong {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.who-value p {
+  font-size: 13px;
+  font-weight: 700;
+}
+
 /* PROJECTS */
 
 .projects {
@@ -547,6 +651,10 @@ footer small {
     gap: 18px;
   }
 
+  nav a {
+    font-size: 10px;
+  }
+
   .hero {
     padding: 85px 7%;
     min-height: 570px;
@@ -570,6 +678,10 @@ footer small {
 
   .project-info {
     padding: 30px;
+  }
+
+  .who-we-are {
+    padding: 80px 7%;
   }
 }
 
@@ -666,6 +778,59 @@ footer small {
     font-size: 23px;
   }
 
+  /* WHO WE ARE MOBILE */
+
+  .who-we-are {
+    padding: 75px 7%;
+  }
+
+  .who-header {
+    align-items: flex-end;
+  }
+
+  .who-header h2 {
+    font-size: 34px;
+  }
+
+  .who-number {
+    font-size: 9px;
+  }
+
+  .who-photo {
+    height: 280px;
+  }
+
+  .who-caption {
+    font-size: 9px;
+    gap: 10px;
+  }
+
+  .who-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 50px;
+  }
+
+  .who-content h3 {
+    font-size: 25px;
+  }
+
+  .who-content p {
+    font-size: 13px;
+  }
+
+  .who-values {
+    grid-template-columns: 1fr;
+    margin-top: 45px;
+  }
+
+  .who-value,
+  .who-value:not(:first-child) {
+    padding: 20px 0;
+    border-left: none;
+    border-bottom: 1px solid var(--ink);
+  }
+
   .members-content {
     flex-direction: column;
     align-items: flex-start;
@@ -736,6 +901,7 @@ footer small {
 
   <nav id="main-nav">
     <a href="#about">ABOUT</a>
+    <a href="#who-we-are">WHO WE ARE</a>
     <a href="#projects">PROJECTS</a>
     <a href="members.html">MEMBERS</a>
     <a href="#news">NEWS</a>
@@ -748,6 +914,7 @@ footer small {
 <!-- HERO -->
 
 <div class="hero">
+
   <div class="hero-inner">
 
     <div class="eyebrow">IDEAS INTO REALITY.</div>
@@ -769,6 +936,7 @@ footer small {
   </div>
 
   <div class="hero-decoration">→</div>
+
 </div>
 
 <!-- ABOUT -->
@@ -800,19 +968,102 @@ footer small {
 
 </section>
 
+<!-- WHO WE ARE -->
+
+<section class="who-we-are" id="who-we-are">
+
+  <div class="who-header">
+
+    <div>
+      <div class="label">02 / WHO WE ARE</div>
+      <h2>私たちについて。</h2>
+    </div>
+
+    <div class="who-number">
+      CAN GO→ / 2026
+    </div>
+
+  </div>
+
+  <!-- TEAM PHOTO -->
+
+  <div class="reveal">
+
+    <img
+      src="images/team-photo.jpg"
+      alt="CAN GO→ メンバー集合写真"
+      class="who-photo"
+    >
+
+    <div class="who-caption">
+      <span>THE PEOPLE BEHIND CAN GO→</span>
+      <span>OUR TEAM ↗</span>
+    </div>
+
+  </div>
+
+  <!-- INTRODUCTION -->
+
+  <div class="who-content reveal">
+
+    <h3>
+      Ideas don't move themselves.<br>
+      <span>We make them happen.</span>
+    </h3>
+
+    <p>
+      CAN GO→は、それぞれ異なる個性や得意分野を持つ
+      メンバーが集まり、アイデアを実際の形にすることを
+      目指すプロジェクトチームです。
+
+      企画、デザイン、プログラミングなど、
+      一人ひとりの力を持ち寄り、互いに意見を出し合いながら
+      新しい価値を生み出しています。
+
+      まだ世の中にないものを考え、試し、形にしていく。
+      私たちは、可能性を信じて一歩ずつ進み続けます。
+    </p>
+
+  </div>
+
+  <!-- OUR VALUES -->
+
+  <div class="who-values reveal">
+
+    <div class="who-value">
+      <strong>01 / MISSION</strong>
+      <p>アイデアを現実にする。</p>
+    </div>
+
+    <div class="who-value">
+      <strong>02 / STYLE</strong>
+      <p>個性を活かし、協力して創る。</p>
+    </div>
+
+    <div class="who-value">
+      <strong>03 / VISION</strong>
+      <p>新しい価値と可能性を生み出す。</p>
+    </div>
+
+  </div>
+
+</section>
+
 <!-- PROJECTS -->
 
 <section class="projects" id="projects">
 
-  <div class="label">02 / PROJECTS</div>
+  <div class="label">03 / PROJECTS</div>
 
   <div class="section-heading">
     <h2>プロジェクト</h2>
     <small>OUR WORKS ↘</small>
   </div>
 
-  <a class="project-card reveal"
-     href="project/positivefinger.html">
+  <a
+    class="project-card reveal"
+    href="project/positivefinger.html"
+  >
 
     <div class="project-art">
 
@@ -847,7 +1098,7 @@ footer small {
 
 <section class="members" id="members">
 
-  <div class="label">03 / OUR TEAM</div>
+  <div class="label">04 / OUR TEAM</div>
 
   <h2>メンバー</h2>
 
@@ -855,6 +1106,7 @@ footer small {
 
     <div>
       <h3>Ideas are created by people.</h3>
+
       <p>
         それぞれの得意分野を活かし、<br>
         チームで新しい可能性に挑戦しています。
@@ -873,7 +1125,7 @@ footer small {
 
 <section class="news" id="news">
 
-  <div class="label">04 / NEWS</div>
+  <div class="label">05 / NEWS</div>
 
   <h2>お知らせ</h2>
 
@@ -897,7 +1149,7 @@ footer small {
 
 <section class="contact" id="contact">
 
-  <div class="label">05 / CONTACT</div>
+  <div class="label">06 / CONTACT</div>
 
   <h2>Let's move forward.</h2>
 
