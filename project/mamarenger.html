@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#7850B5">
-<meta name="description" content="ママレンジャーナリング。書くことから始まる、宮崎の子育て支援。子育て中の気持ちを安心して書き出せる新しい仕組みを目指します。">
+<meta name="description" content="ママレンジャーナリング | CAN GO→ PROJECT 001">
 
-<title>ママレンジャーナリング | 書くことから始まる子育て支援</title>
+<title>ママレンジャーナリング | CAN GO→</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,14 +18,12 @@
   --purple: #7850B5;
   --purple-dark: #56368A;
   --purple-light: #F1EBFA;
-  --red: #E84032;
-  --pink: #F47C9F;
   --yellow: #FFD978;
-  --ink: #30251F;
-  --muted: #81766F;
+  --ink: #191719;
   --white: #FFFFFF;
-  --bg: #FCFAF7;
-  --line: #EAE2DA;
+  --gray: #777077;
+  --bg: #FAF8FC;
+  --line: #E4DCEB;
 }
 
 * {
@@ -43,13 +41,13 @@ body {
   font-family: Inter, "Noto Sans JP", sans-serif;
   color: var(--ink);
   background: var(--bg);
-  line-height: 1.9;
+  line-height: 1.8;
   overflow-x: hidden;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
 /* HEADER */
@@ -61,179 +59,143 @@ header {
   justify-content: space-between;
   align-items: center;
   background: white;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 2px solid var(--ink);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
 .logo {
-  font-size: 19px;
+  font-size: 24px;
   font-weight: 900;
   letter-spacing: -1px;
-  color: var(--purple);
 }
 
-.logo small {
-  display: block;
-  font-size: 8px;
-  letter-spacing: 2px;
-  color: var(--muted);
-  line-height: 1;
+.logo span {
+  color: #D1A900;
 }
 
-nav {
-  display: flex;
-  gap: 27px;
+.back {
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: .2s;
 }
 
-nav a:hover {
+.back:hover {
   color: var(--purple);
-}
-
-.menu {
-  display: none;
-  background: none;
-  border: 0;
-  font-size: 25px;
-  color: var(--ink);
-  cursor: pointer;
 }
 
 /* HERO */
 
 .hero {
-  min-height: 650px;
-  padding: 75px 11%;
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
+  min-height: 590px;
+  background: var(--purple);
+  padding: 90px 12%;
+  display: flex;
   align-items: center;
-  gap: 30px;
-  background: var(--purple-light);
+  justify-content: space-between;
   position: relative;
   overflow: hidden;
+  border-bottom: 2px solid var(--ink);
 }
 
 .hero::after {
   content: "✦";
   position: absolute;
-  right: -30px;
-  top: 20px;
-  font-size: 350px;
-  color: #7850B508;
+  right: -50px;
+  bottom: -200px;
+  font-size: 550px;
+  line-height: 1;
+  font-weight: 900;
+  color: #FFFFFF16;
   pointer-events: none;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
+  max-width: 650px;
 }
 
-.eyebrow {
+.label {
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 3px;
-  color: var(--purple);
-  margin-bottom: 23px;
+  margin-bottom: 22px;
+  color: white;
 }
 
 h1 {
-  font-size: clamp(39px, 5.5vw, 68px);
+  font-size: clamp(48px, 7vw, 86px);
+  line-height: 1.3;
+  letter-spacing: -3px;
   font-weight: 900;
-  line-height: 1.4;
-  letter-spacing: -2px;
+  color: white;
 }
 
-h1 span {
-  color: var(--purple);
+.hero-keyword {
+  color: var(--yellow);
+  display: inline-block;
+  text-shadow: 4px 4px 0 var(--ink);
 }
 
 .hero-description {
-  margin-top: 25px;
   font-size: 15px;
-  color: #655A62;
-  line-height: 2.2;
+  font-weight: 700;
+  color: white;
+  margin-top: 25px;
+  line-height: 2;
 }
 
-.hero-description strong {
-  color: var(--purple-dark);
-}
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 13px;
+.hero-sub {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #FFFFFFC9;
   margin-top: 35px;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 14px 23px;
-  background: var(--purple);
-  color: white;
-  font-size: 12px;
-  font-weight: 800;
-  border: 2px solid var(--purple);
-  transition: .25s;
-}
+/* HERO IMAGE */
 
-.btn:hover {
-  background: var(--purple-dark);
-  transform: translateY(-3px);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--purple);
-}
-
-.btn-outline:hover {
-  color: white;
-}
-
-.hero-visual {
+.hero-icon-wrap {
   position: relative;
   z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-shrink: 0;
+  margin-left: 40px;
 }
 
-.hero-visual img {
-  width: 100%;
-  max-width: 460px;
-  height: auto;
+.hero-icon {
+  width: clamp(180px, 22vw, 300px);
+  height: clamp(180px, 22vw, 300px);
   object-fit: contain;
-  filter: drop-shadow(0 18px 15px #30251F12);
-  animation: float 4s ease-in-out infinite;
+  border: 4px solid var(--ink);
+  border-radius: 48px;
+  background: white;
+  padding: 10px;
+  box-shadow: 13px 13px 0 var(--ink);
+  transform: rotate(4deg);
+  transition: .3s;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.hero-icon:hover {
+  transform: rotate(0deg) scale(1.04);
 }
 
-.sparkle {
+.icon-decoration {
   position: absolute;
-  color: var(--red);
-  font-size: 35px;
-}
-
-.sparkle.one {
-  top: 5%;
-  right: 5%;
-}
-
-.sparkle.two {
-  bottom: 10%;
-  left: 0;
-  color: #E5A900;
+  top: -30px;
+  right: -30px;
+  background: var(--yellow);
+  width: 65px;
+  height: 65px;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  font-weight: 900;
 }
 
 /* COMMON */
@@ -243,228 +205,223 @@ section {
 }
 
 .section-label {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 900;
   letter-spacing: 3px;
-  color: var(--purple);
+  color: var(--purple-dark);
   margin-bottom: 12px;
 }
 
 h2 {
-  font-size: clamp(28px, 4vw, 39px);
+  font-size: clamp(29px, 4vw, 39px);
   font-weight: 900;
-  letter-spacing: -1px;
+  letter-spacing: -1.5px;
+  margin-bottom: 40px;
   line-height: 1.5;
-  margin-bottom: 35px;
 }
 
 .lead {
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 800;
-  line-height: 2;
+  line-height: 1.9;
 }
 
 .body {
   font-size: 14px;
-  color: var(--muted);
-  max-width: 780px;
+  color: var(--gray);
   margin-top: 22px;
-  line-height: 2.3;
+  max-width: 760px;
+  line-height: 2.2;
 }
 
-/* CONCEPT */
+/* OVERVIEW */
 
-.concept {
+.overview {
   background: white;
 }
 
-.concept-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 65px;
-  align-items: center;
+.overview-highlight {
+  display: inline;
+  background: var(--yellow);
+  padding: 2px 6px;
 }
 
-.concept-quote {
-  padding: 35px;
-  background: var(--purple-light);
-  border-left: 5px solid var(--purple);
-}
+/* PROBLEM */
 
-.concept-quote p {
-  font-size: 23px;
-  font-weight: 900;
-  line-height: 1.8;
-  color: var(--purple-dark);
-}
-
-.concept-quote small {
-  display: block;
-  margin-top: 18px;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: var(--muted);
-}
-
-/* ISSUE */
-
-.issue {
+.problem {
   background: var(--ink);
   color: white;
 }
 
-.issue .section-label {
+.problem .section-label {
   color: var(--yellow);
 }
 
-.issue .body {
-  color: #D2C8C1;
+.problem .body {
+  color: #D0C8CE;
 }
 
-.issue-grid {
+.problem-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 17px;
-  margin-top: 40px;
+  gap: 18px;
+  margin-top: 45px;
 }
 
-.issue-card {
-  padding: 27px;
-  background: #40332D;
-  border: 1px solid #59483F;
+.problem-card {
+  padding: 28px;
+  background: #30262D;
+  border: 1px solid #51404B;
   transition: .25s;
 }
 
-.issue-card:hover {
+.problem-card:hover {
+  background: #44313E;
   transform: translateY(-5px);
-  background: #514037;
 }
 
-.issue-card .number {
+.problem-card .number {
+  color: var(--yellow);
   font-size: 11px;
   font-weight: 900;
-  color: var(--yellow);
   letter-spacing: 2px;
 }
 
-.issue-card h3 {
+.problem-card h3 {
   font-size: 17px;
-  margin: 15px 0 10px;
+  margin: 13px 0;
 }
 
-.issue-card p {
-  color: #D2C8C1;
+.problem-card p {
   font-size: 12px;
+  color: #D0C8CE;
 }
 
-/* SERVICE */
+/* FEATURES */
 
-.service {
-  background: var(--bg);
+.features {
+  background: var(--purple-light);
 }
 
-.service-grid {
+.feature-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-.service-card {
+.feature {
+  padding: 32px;
   background: white;
-  border: 1px solid var(--line);
-  padding: 30px;
+  border: 2px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
   transition: .25s;
 }
 
-.service-card:hover {
-  border-color: var(--purple);
-  transform: translateY(-4px);
+.feature:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--ink);
 }
 
-.service-card .num {
-  font-size: 11px;
-  color: var(--purple);
+.feature .num {
+  display: inline-block;
+  background: var(--purple);
+  color: white;
+  padding: 4px 10px;
+  font-size: 10px;
   font-weight: 900;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
-.service-card h3 {
-  font-size: 19px;
-  margin: 12px 0;
+.feature h3 {
+  font-size: 20px;
   font-weight: 900;
+  margin: 17px 0 10px;
 }
 
-.service-card p {
-  color: var(--muted);
+.feature p {
   font-size: 13px;
-  line-height: 2.1;
+  color: var(--gray);
+  line-height: 2;
 }
 
-.service-icon {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
+/* SYSTEM */
 
-/* FLOW */
-
-.flow-section {
-  background: var(--purple-light);
+.system {
+  background: white;
 }
 
 .flow {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
   gap: 12px;
   margin-top: 45px;
 }
 
 .flow-item {
-  background: white;
-  padding: 24px 15px;
+  flex: 1;
+  min-width: 0;
+  padding: 22px 12px;
+  background: var(--purple-light);
+  border: 1px solid var(--line);
   text-align: center;
-  border-bottom: 4px solid var(--purple);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.flow-item .number {
-  font-size: 11px;
+.flow-item strong {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.flow-item small {
+  font-size: 10px;
+  color: var(--gray);
+  margin-top: 7px;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
   font-weight: 900;
   color: var(--purple);
-  letter-spacing: 2px;
-}
-
-.flow-item h3 {
-  font-size: 15px;
-  margin: 12px 0 8px;
-}
-
-.flow-item p {
-  font-size: 11px;
-  color: var(--muted);
 }
 
 /* RANGER */
 
 .ranger {
-  background: white;
+  background: var(--yellow);
+}
+
+.ranger .section-label {
+  color: #715900;
+}
+
+.ranger .body {
+  color: #51451C;
 }
 
 .ranger-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 55px;
+  gap: 45px;
   align-items: center;
 }
 
 .ranger-box {
-  background: var(--yellow);
+  background: white;
   padding: 40px;
   text-align: center;
+  border: 2px solid var(--ink);
+  box-shadow: 7px 7px 0 var(--ink);
 }
 
 .ranger-box .symbol {
   font-size: 75px;
   line-height: 1.3;
+  color: var(--purple);
 }
 
 .ranger-box h3 {
@@ -475,13 +432,13 @@ h2 {
 
 .ranger-box p {
   font-size: 12px;
-  color: #67532B;
+  color: var(--gray);
 }
 
 /* SAFETY */
 
 .safety {
-  background: #F2EBE5;
+  background: white;
 }
 
 .safety-grid {
@@ -492,8 +449,9 @@ h2 {
 }
 
 .safety-item {
-  padding: 25px;
-  background: white;
+  padding: 27px;
+  background: var(--purple-light);
+  border-left: 4px solid var(--purple);
 }
 
 .safety-item h3 {
@@ -503,13 +461,14 @@ h2 {
 
 .safety-item p {
   font-size: 12px;
-  color: var(--muted);
+  color: var(--gray);
+  line-height: 2;
 }
 
 /* MIYAZAKI */
 
 .miyazaki {
-  background: white;
+  background: var(--purple-light);
 }
 
 .miyazaki-banner {
@@ -517,6 +476,8 @@ h2 {
   padding: 45px;
   background: var(--purple);
   color: white;
+  border: 2px solid var(--ink);
+  box-shadow: 7px 7px 0 var(--ink);
   position: relative;
   overflow: hidden;
 }
@@ -548,57 +509,97 @@ h2 {
   z-index: 1;
 }
 
-/* MESSAGE */
+/* DEVELOPMENT */
 
-.message {
-  padding: 110px 10%;
-  background: var(--yellow);
-  text-align: center;
+.development {
+  background: white;
 }
 
-.message .section-label {
-  color: #71551C;
+.development-box {
+  padding: 35px;
+  background: var(--purple-light);
+  border: 2px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
 }
 
-.message h2 {
-  font-size: clamp(30px, 5vw, 52px);
-  margin-bottom: 20px;
+.development-box h3 {
+  font-size: 19px;
+  margin-bottom: 12px;
 }
 
-.message p {
+.development-box p {
   font-size: 13px;
-  color: #66552D;
+  color: var(--gray);
+  line-height: 2.1;
+}
+
+/* CTA */
+
+.cta {
+  background: var(--purple);
+  color: white;
+  text-align: center;
+  padding: 110px 10%;
+}
+
+.cta .section-label {
+  color: var(--yellow);
+}
+
+.cta h2 {
+  font-size: clamp(34px, 5vw, 57px);
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.cta p {
+  color: #FFFFFFDB;
+  font-size: 13px;
+  margin-bottom: 35px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+  padding: 15px 25px;
+  background: var(--yellow);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  font-size: 12px;
+  font-weight: 900;
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--ink);
 }
 
 /* FOOTER */
 
 footer {
-  padding: 35px 8%;
-  background: var(--ink);
-  color: white;
+  padding: 30px 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: white;
+  border-top: 2px solid var(--ink);
   gap: 20px;
 }
 
-.footer-logo {
-  font-size: 18px;
-  font-weight: 900;
-  color: white;
-}
-
 footer small {
-  color: #C4B8B0;
-  font-size: 10px;
+  color: var(--gray);
+  font-size: 11px;
 }
 
 /* REVEAL */
 
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: .7s;
+  transform: translateY(25px);
+  transition: opacity .7s, transform .7s;
 }
 
 .reveal.visible {
@@ -608,69 +609,67 @@ footer small {
 
 /* RESPONSIVE */
 
-@media(max-width: 850px) {
+@media(max-width: 800px) {
   .hero {
-    padding: 70px 7%;
-    grid-template-columns: 1fr 1fr;
+    padding: 80px 7%;
   }
 
   section {
     padding: 80px 7%;
   }
 
-  .issue-grid {
+  .hero-icon {
+    width: 190px;
+    height: 190px;
+  }
+
+  .problem-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media(max-width: 650px) {
+@media(max-width: 600px) {
   header {
     padding: 0 6%;
-    height: 65px;
+    height: 66px;
   }
 
-  .menu {
-    display: block;
+  .back {
+    font-size: 9px;
   }
 
-  nav {
-    display: none;
-    position: absolute;
-    top: 65px;
-    left: 0;
-    right: 0;
-    background: white;
-    padding: 25px 7%;
-    flex-direction: column;
-    gap: 18px;
-    border-bottom: 1px solid var(--line);
-  }
-
-  nav.open {
-    display: flex;
+  .logo {
+    font-size: 20px;
   }
 
   .hero {
+    min-height: 650px;
     padding: 65px 7%;
-    grid-template-columns: 1fr;
-    text-align: left;
-    gap: 20px;
-  }
-
-  .hero-visual {
-    order: -1;
-  }
-
-  .hero-visual img {
-    max-width: 290px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 55px;
   }
 
   h1 {
-    font-size: 44px;
+    font-size: clamp(43px, 11vw, 62px);
+    letter-spacing: -2px;
   }
 
-  .hero-description {
-    font-size: 13px;
+  .hero-icon-wrap {
+    margin: 0 auto 15px;
+  }
+
+  .hero-icon {
+    width: 155px;
+    height: 155px;
+    border-radius: 30px;
+  }
+
+  .icon-decoration {
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
   }
 
   section {
@@ -679,26 +678,32 @@ footer small {
 
   h2 {
     font-size: 29px;
+    margin-bottom: 30px;
   }
 
-  .concept-grid,
-  .ranger-content,
-  .service-grid,
-  .safety-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
+  .lead {
+    font-size: 18px;
   }
 
-  .issue-grid {
+  .problem-grid,
+  .feature-list,
+  .safety-grid,
+  .ranger-content {
     grid-template-columns: 1fr;
   }
 
   .flow {
-    grid-template-columns: 1fr 1fr;
+    flex-direction: column;
+    gap: 8px;
   }
 
-  .concept-quote {
-    padding: 25px;
+  .flow-arrow {
+    justify-content: center;
+    transform: rotate(90deg);
+  }
+
+  .flow-item {
+    padding: 15px;
   }
 
   .miyazaki-banner {
@@ -709,12 +714,12 @@ footer small {
     font-size: 21px;
   }
 
-  .message {
+  .cta {
     padding: 80px 7%;
   }
 
   footer {
-    padding: 30px 7%;
+    padding: 25px 7%;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -722,9 +727,9 @@ footer small {
 
 @media(prefers-reduced-motion: reduce) {
   *, *::before, *::after {
-    animation: none !important;
-    transition: none !important;
     scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
   }
 
   .reveal {
@@ -738,20 +743,13 @@ footer small {
 <body>
 
 <header>
-  <a href="#" class="logo">
-    ママレンジャーナリング
-    <small>MAMA RANGER JOURNALING</small>
+  <a href="../index.html" class="logo">
+    CAN GO<span>→</span>
   </a>
 
-  <button class="menu" aria-label="メニュー">☰</button>
-
-  <nav>
-    <a href="#concept">CONCEPT</a>
-    <a href="#issue">ISSUE</a>
-    <a href="#service">SERVICE</a>
-    <a href="#flow">HOW IT WORKS</a>
-    <a href="#about">ABOUT</a>
-  </nav>
+  <a href="../index.html#projects" class="back">
+    ← BACK TO CAN GO→
+  </a>
 </header>
 
 <main>
@@ -762,102 +760,81 @@ footer small {
 
   <div class="hero-content">
 
-    <div class="eyebrow">
-      MIYAZAKI / CHILDCARE SUPPORT PROJECT
-    </div>
+    <div class="label">PROJECT 001 / CAN GO→</div>
 
     <h1>
       書くことから、<br>
-      <span>はじまる。</span><br>
-      子育て支援。
+      <span class="hero-keyword">はじまる。</span>
     </h1>
 
     <p class="hero-description">
       子育ての喜びも、不安も、何気ない気持ちも。<br>
-      <strong>ひとりで抱え込まないための、新しい仕組み。</strong>
+      ひとりで抱え込まないための、新しい仕組み。
     </p>
 
-    <div class="hero-buttons">
-      <a href="#concept" class="btn">
-        PROJECT CONCEPT <span>→</span>
-      </a>
-
-      <a href="#service" class="btn btn-outline">
-        ABOUT PROJECT
-      </a>
+    <div class="hero-sub">
+      MIYAZAKI / CHILDCARE SUPPORT PROJECT
     </div>
 
   </div>
 
-  <div class="hero-visual">
-    <span class="sparkle one">✦</span>
-    <span class="sparkle two">✦</span>
+  <div class="hero-icon-wrap">
 
     <img
       src="../images/hero_mama_transparent.png"
       alt="ママレンジャーナリングのキャラクター"
+      class="hero-icon"
     >
+
+    <div class="icon-decoration">✦</div>
+
   </div>
 
 </div>
 
-<!-- CONCEPT -->
+<!-- OVERVIEW -->
 
-<section class="concept reveal" id="concept">
+<section class="overview reveal">
 
-  <div class="section-label">01 / CONCEPT</div>
+  <div class="section-label">01 / OVERVIEW</div>
 
-  <h2>気持ちを書き出すことから、<br>子育てを支える。</h2>
+  <h2>プロジェクト概要</h2>
 
-  <div class="concept-grid">
+  <p class="lead">
+    <span class="overview-highlight">
+      書くことから始まる、子育て支援。
+    </span>
+  </p>
 
-    <div>
-      <p class="lead">
-        相談するほどではない。<br>
-        でも、誰かに聞いてほしい。
-      </p>
+  <p class="body">
+    ママレンジャーナリングは、子育て中の人が日々の気持ちや悩みを
+    安心して書き出せる場所をつくることを目指すプロジェクトです。
 
-      <p class="body">
-        子育ての悩みは、いつも相談窓口に届くとは限りません。
-        忙しさや遠慮から、自分の気持ちを言葉にできないこともあります。
-
-        ママレンジャーナリングは、そんな日々の気持ちを
-        匿名で自由に書き出せる場所をつくることを目指しています。
-      </p>
-    </div>
-
-    <div class="concept-quote">
-      <p>
-        「相談する」よりも、<br>
-        まずは「書いてみる」。
-      </p>
-
-      <small>
-        A NEW APPROACH TO CHILDCARE SUPPORT
-      </small>
-    </div>
-
-  </div>
+    相談するほどではないけれど、誰かに聞いてほしい。
+    そんな気持ちを匿名で記録し、子育て経験のあるサポーターが受け止める。
+    書くことをきっかけに、人と人、そして地域の支援をつなぐ仕組みを構想しています。
+  </p>
 
 </section>
 
-<!-- ISSUE -->
+<!-- SOCIAL ISSUE -->
 
-<section class="issue" id="issue">
+<section class="problem">
 
   <div class="section-label">02 / SOCIAL ISSUE</div>
 
-  <h2>見えにくい子育ての気持ち。</h2>
+  <h2>解決したい課題</h2>
 
   <p class="body">
-    子育てには、喜びだけでなく、不安や孤独、疲れなど、
+    子育てには喜びだけでなく、不安や孤独、疲れなど、
     さまざまな感情があります。
-    その声が周囲に届かないままになってしまうこともあります。
+    しかし、その声が周囲に届かないままになってしまうこともあります。
+    私たちは、日々の小さな気持ちを受け止める仕組みに着目しました。
   </p>
 
-  <div class="issue-grid">
+  <div class="problem-grid">
 
-    <div class="issue-card reveal">
+    <div class="problem-card reveal">
       <div class="number">ISSUE 01</div>
       <h3>相談するハードル</h3>
       <p>
@@ -866,7 +843,7 @@ footer small {
       </p>
     </div>
 
-    <div class="issue-card reveal">
+    <div class="problem-card reveal">
       <div class="number">ISSUE 02</div>
       <h3>時間や環境の制約</h3>
       <p>
@@ -875,7 +852,7 @@ footer small {
       </p>
     </div>
 
-    <div class="issue-card reveal">
+    <div class="problem-card reveal">
       <div class="number">ISSUE 03</div>
       <h3>声が届きにくい</h3>
       <p>
@@ -888,23 +865,22 @@ footer small {
 
 </section>
 
-<!-- SERVICE -->
+<!-- FEATURES -->
 
-<section class="service" id="service">
+<section class="features">
 
   <div class="section-label">03 / PROJECT FEATURES</div>
 
-  <h2>ママレンジャーナリングの仕組み</h2>
+  <h2>主な仕組み</h2>
 
   <p class="body">
     書くこと、人が受け止めること、そして必要な支援につなぐこと。
     それぞれの役割を組み合わせた子育て支援の仕組みを構想しています。
   </p>
 
-  <div class="service-grid">
+  <div class="feature-list">
 
-    <div class="service-card reveal">
-      <div class="service-icon">📖</div>
+    <div class="feature reveal">
       <div class="num">FEATURE 01</div>
       <h3>匿名ジャーナリング</h3>
       <p>
@@ -913,33 +889,33 @@ footer small {
       </p>
     </div>
 
-    <div class="service-card reveal">
-      <div class="service-icon">🦸</div>
+    <div class="feature reveal">
       <div class="num">FEATURE 02</div>
       <h3>ママレンジャー</h3>
       <p>
         子育て経験のある人がレンジャーとして参加。
-        投稿者の気持ちを受け止め、1日1通を目安にメッセージを届ける仕組みです。
+        投稿者の気持ちを受け止め、1日1通を目安に
+        メッセージを届ける仕組みを想定しています。
       </p>
     </div>
 
-    <div class="service-card reveal">
-      <div class="service-icon">✦</div>
+    <div class="feature reveal">
       <div class="num">FEATURE 03</div>
       <h3>AIによるサポート</h3>
       <p>
         AIが投稿や返信の安全確認、緊急性の確認などを補助。
-        AI自身が相談相手になるのではなく、人による対応を支援します。
+        AI自身が相談相手になるのではなく、
+        人による対応を支援する役割を想定しています。
       </p>
     </div>
 
-    <div class="service-card reveal">
-      <div class="service-icon">🌱</div>
+    <div class="feature reveal">
       <div class="num">FEATURE 04</div>
       <h3>地域の声を未来へ</h3>
       <p>
         個人が特定されないよう配慮して声を集約し、
-        地域の子育て支援や施策の改善に役立てることを目指します。
+        地域の子育て支援や施策の改善に
+        役立てることを目指します。
       </p>
     </div>
 
@@ -947,42 +923,45 @@ footer small {
 
 </section>
 
-<!-- FLOW -->
+<!-- SYSTEM -->
 
-<section class="flow-section" id="flow">
+<section class="system reveal">
 
-  <div class="section-label">04 / HOW IT WORKS</div>
+  <div class="section-label">04 / SYSTEM</div>
 
   <h2>利用の流れ</h2>
 
   <p class="body">
     気持ちを書き出すところから、必要な支援につながるまで。
+    人によるサポートを中心とした仕組みを目指します。
   </p>
 
   <div class="flow">
 
     <div class="flow-item">
-      <div class="number">STEP 01</div>
-      <h3>気持ちを書く</h3>
-      <p>匿名で自由に気持ちを記録する。</p>
+      <strong>気持ちを書く</strong>
+      <small>JOURNALING</small>
     </div>
 
-    <div class="flow-item">
-      <div class="number">STEP 02</div>
-      <h3>人が受け止める</h3>
-      <p>レンジャーが投稿を確認する。</p>
-    </div>
+    <div class="flow-arrow">→</div>
 
     <div class="flow-item">
-      <div class="number">STEP 03</div>
-      <h3>必要な支援へ</h3>
-      <p>必要に応じて適切な相談先につなぐ。</p>
+      <strong>投稿を確認</strong>
+      <small>CHECK</small>
     </div>
 
+    <div class="flow-arrow">→</div>
+
     <div class="flow-item">
-      <div class="number">STEP 04</div>
-      <h3>地域に活かす</h3>
-      <p>匿名化した声を支援の改善に役立てる。</p>
+      <strong>人が受け止める</strong>
+      <small>SUPPORT</small>
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <div class="flow-item">
+      <strong>必要な支援へ</strong>
+      <small>CONNECT</small>
     </div>
 
   </div>
@@ -1000,6 +979,7 @@ footer small {
   <div class="ranger-content">
 
     <div>
+
       <p class="lead">
         ママレンジャーは、<br>
         子育ての経験を持つサポーター。
@@ -1015,12 +995,22 @@ footer small {
         参加者には研修や利用規約を設け、
         安心して活動できる仕組みを検討します。
       </p>
+
     </div>
 
     <div class="ranger-box">
+
       <div class="symbol">✦</div>
-      <h3>YOUR EXPERIENCE<br>CAN SUPPORT SOMEONE.</h3>
-      <p>あなたの経験が、誰かの支えになる。</p>
+
+      <h3>
+        YOUR EXPERIENCE<br>
+        CAN SUPPORT SOMEONE.
+      </h3>
+
+      <p>
+        あなたの経験が、誰かの支えになる。
+      </p>
+
     </div>
 
   </div>
@@ -1080,7 +1070,7 @@ footer small {
 
 <!-- MIYAZAKI -->
 
-<section class="miyazaki reveal" id="about">
+<section class="miyazaki reveal">
 
   <div class="section-label">07 / FOR MIYAZAKI</div>
 
@@ -1095,21 +1085,51 @@ footer small {
   </p>
 
   <div class="miyazaki-banner">
-    <h3>書くことから始まる、<br>宮崎の子育て支援。</h3>
+
+    <h3>
+      書くことから始まる、<br>
+      宮崎の子育て支援。
+    </h3>
 
     <p>
       個人の気持ちを大切にしながら、
       地域全体で子育てを支える新しい仕組みへ。
     </p>
+
   </div>
 
 </section>
 
-<!-- MESSAGE -->
+<!-- DEVELOPMENT -->
 
-<section class="message">
+<section class="development reveal">
 
-  <div class="section-label">MAMA RANGER JOURNALING</div>
+  <div class="section-label">08 / DEVELOPMENT</div>
+
+  <h2>プロジェクトのこれから</h2>
+
+  <div class="development-box">
+
+    <h3>構想から、実現へ。</h3>
+
+    <p>
+      ママレンジャーナリングは、子育て中の人の気持ちを
+      安心して受け止められる仕組みを目指して企画を進めています。
+
+      今後は、利用者や支援者の声を取り入れながら、
+      サービスの具体化や運用方法、安全性について検討し、
+      実現に向けて取り組んでいきます。
+    </p>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+  <div class="section-label">CAN GO→ / PROJECT 001</div>
 
   <h2>
     あなたの気持ちを、<br>
@@ -1120,42 +1140,45 @@ footer small {
     書くことから始まる、新しい子育て支援のかたち。
   </p>
 
+  <a class="btn" href="../index.html">
+    CAN GO→ 公式サイトへ戻る
+    <span>→</span>
+  </a>
+
 </section>
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
 
-  <div>
-    <div class="footer-logo">ママレンジャーナリング</div>
-    <small>MAMA RANGER JOURNALING</small>
-  </div>
+  <a href="../index.html" class="logo">
+    CAN GO<span>→</span>
+  </a>
 
-  <small>© 2026 MAMA RANGER JOURNALING</small>
+  <small>© 2026 CAN GO→ / PROJECT 001</small>
 
 </footer>
 
 <script>
-const menu = document.querySelector('.menu');
-const nav = document.querySelector('nav');
 
-menu.addEventListener('click', () => {
-  nav.classList.toggle('open');
-});
-
-document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('open');
-  });
-});
+// Scroll Reveal
 
 const observer = new IntersectionObserver(entries => {
+
   entries.forEach(entry => {
+
     if (entry.isIntersecting) {
+
       entry.target.classList.add('visible');
+
       observer.unobserve(entry.target);
+
     }
+
   });
+
 }, {
   threshold: 0.12
 });
@@ -1163,6 +1186,7 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => {
   observer.observe(el);
 });
+
 </script>
 
 </body>
