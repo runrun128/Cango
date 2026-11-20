@@ -17,6 +17,8 @@
 :root {
   --yellow: #FFD32D;
   --pink: #CB6A9C;
+  --purple: #8B5CF6;
+  --purple-dark: #7041D8;
   --ink: #171717;
   --white: #FFFFFF;
   --gray: #777777;
@@ -377,14 +379,24 @@ h2 {
   background: #F4F3EF;
 }
 
+.projects-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+/* PROJECT CARD */
+
 .project-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 0;
   background: white;
   border: 2px solid var(--ink);
   box-shadow: 8px 8px 0 var(--ink);
   transition: .25s;
   overflow: hidden;
+  min-width: 0;
 }
 
 .project-card:hover {
@@ -392,11 +404,10 @@ h2 {
   box-shadow: 12px 12px 0 var(--ink);
 }
 
-/* POSITIVEFINGER VISUAL */
+/* PROJECT ART */
 
 .project-art {
   min-height: 350px;
-  background: var(--pink);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -404,7 +415,30 @@ h2 {
   overflow: hidden;
 }
 
-.project-art::before {
+/* ママレンジャーナリング：紫 */
+
+.project-art.mama-art {
+  background: var(--purple);
+}
+
+.project-art.mama-art::before {
+  content: "M";
+  position: absolute;
+  right: 5px;
+  bottom: -130px;
+  font-size: 330px;
+  line-height: 1;
+  font-weight: 900;
+  color: #FFFFFF20;
+}
+
+/* ポジティブフィンガー：ピンク */
+
+.project-art.positive-art {
+  background: var(--pink);
+}
+
+.project-art.positive-art::before {
   content: "+";
   position: absolute;
   right: 10px;
@@ -415,33 +449,50 @@ h2 {
   color: #FFFFFF20;
 }
 
+/* ICON：サイズと動きを統一 */
+
 .project-icon {
   width: 190px;
   height: 190px;
+  min-width: 190px;
+  min-height: 190px;
+  max-width: 190px;
+  max-height: 190px;
   object-fit: contain;
+  display: block;
   position: relative;
   z-index: 1;
   border: 3px solid var(--ink);
   border-radius: 38px;
   box-shadow: 8px 8px 0 var(--ink);
-  transition: .3s;
+  transition: transform .3s ease;
 }
 
 .project-card:hover .project-icon {
   transform: rotate(-5deg) scale(1.05);
 }
 
+/* PROJECT INFO */
+
 .project-info {
   padding: 45px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-width: 0;
 }
 
 .number {
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 2px;
+}
+
+.mama-card .number {
+  color: var(--purple-dark);
+}
+
+.positive-card .number {
   color: var(--pink);
 }
 
@@ -462,13 +513,24 @@ h2 {
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 1px;
-  border-bottom: 2px solid var(--pink);
   padding-bottom: 5px;
   width: max-content;
   transition: .2s;
 }
 
-.link:hover {
+.mama-card .link {
+  border-bottom: 2px solid var(--purple);
+}
+
+.positive-card .link {
+  border-bottom: 2px solid var(--pink);
+}
+
+.mama-card .link:hover {
+  color: var(--purple-dark);
+}
+
+.positive-card .link:hover {
   color: var(--pink);
 }
 
@@ -750,14 +812,24 @@ footer small {
     display: none;
   }
 
-  .about-grid,
-  .project-card {
+  .about-grid {
     grid-template-columns: 1fr;
     gap: 25px;
   }
 
   .about-grid h3 {
     font-size: 23px;
+  }
+
+  /* PROJECTS MOBILE */
+
+  .projects-list {
+    gap: 28px;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .project-art {
@@ -767,6 +839,10 @@ footer small {
   .project-icon {
     width: 145px;
     height: 145px;
+    min-width: 145px;
+    min-height: 145px;
+    max-width: 145px;
+    max-height: 145px;
     border-radius: 30px;
   }
 
@@ -1060,37 +1136,78 @@ footer small {
     <small>OUR WORKS ↘</small>
   </div>
 
-  <a
-    class="project-card reveal"
-    href="project/positivefinger.html"
-  >
+  <div class="projects-list">
 
-    <div class="project-art">
+    <!-- PROJECT 001 : MAMA RANGER -->
 
-      <img
-        src="images/positivefinger-icon.png"
-        alt="ポジティブフィンガーのアプリアイコン"
-        class="project-icon"
-      >
+    <a
+      class="project-card mama-card reveal"
+      href="project/mamarenger.html"
+    >
 
-    </div>
+      <div class="project-art mama-art">
 
-    <div class="project-info">
+        <img
+          src="images/hero_mama_transparent.png"
+          alt="ママレンジャーナリング"
+          class="project-icon"
+        >
 
-      <div class="number">PROJECT 001</div>
+      </div>
 
-      <h3>ポジティブフィンガー</h3>
+      <div class="project-info">
 
-      <p>
-        ポジティブな言葉を広げ、より良いコミュニケーションの
-        実現を目指すキーボード連携型プロジェクト。
-      </p>
+        <div class="number">PROJECT 001</div>
 
-      <span class="link">VIEW PROJECT　→</span>
+        <h3>ママレンジャーナリング</h3>
 
-    </div>
+        <p>
+          子育てに関する課題に目を向け、
+          新しいアイデアや仕組みを通じて
+          より良い環境づくりを目指すプロジェクト。
+        </p>
 
-  </a>
+        <span class="link">VIEW PROJECT　→</span>
+
+      </div>
+
+    </a>
+
+    <!-- PROJECT 002 : POSITIVE FINGER -->
+
+    <a
+      class="project-card positive-card reveal"
+      href="project/positivefinger.html"
+    >
+
+      <div class="project-art positive-art">
+
+        <img
+          src="images/positivefinger-icon.png"
+          alt="ポジティブフィンガー"
+          class="project-icon"
+        >
+
+      </div>
+
+      <div class="project-info">
+
+        <div class="number">PROJECT 002</div>
+
+        <h3>ポジティブフィンガー</h3>
+
+        <p>
+          ポジティブな言葉を広げ、より良いコミュニケーションの
+          実現を目指すキーボード連携型プロジェクト。
+        </p>
+
+        <span class="link">VIEW PROJECT　→</span>
+
+      </div>
+
+    </a>
+
+  </div>
 
 </section>
 
@@ -1138,7 +1255,12 @@ footer small {
 
     <div class="news-item">
       <time datetime="2026-11">2026.11</time>
-      <span>PROJECT 001 ポジティブフィンガー</span>
+      <span>PROJECT 001 ママレンジャーナリング</span>
+    </div>
+
+    <div class="news-item">
+      <time datetime="2026-11">2026.11</time>
+      <span>PROJECT 002 ポジティブフィンガー</span>
     </div>
 
   </div>
